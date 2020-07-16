@@ -1,1 +1,5 @@
-console.log("testtest");
+class SimidTest extends BaseSimidCreative {
+  constructor() {
+    super();
+  }
+}
