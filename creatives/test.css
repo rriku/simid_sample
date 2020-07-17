@@ -12,4 +12,8 @@ body { color: #FFF; background-color: #000; margin: 0; font-family: 'Kosugi Maru
 
 .simid_creative_wrapper .options ul li:hover { background-color: rgba(255, 255, 255, 0.1); }
 
-.simid_creative_wrapper .options ul li input[type=radio] { margin-right: 10px; }
+.simid_creative_wrapper .options ul li input[type=radio] { display: none; }
+
+.simid_creative_wrapper .options ul li label { cursor: pointer; display: block; /* float: right; width: 95%; */ line-height: 150%; }
+
+.simid_creative_wrapper .options ul li#button_skip { background-color: #000; }
