@@ -1,0 +1,66 @@
+/// mix in ///
+@mixin basic-transition($sec:0.3){
+    transition:all #{$sec}s;
+    -webkit-transition:all #{$sec}s;
+}
+@mixin flex {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display:flex;
+	-ms-flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	flex-wrap:wrap;
+}
+/// mix in ///
+
+body{
+    color: #FFF;
+    background-color: #000;
+    margin: 0;
+    font-family: 'Kosugi Maru', sans-serif;
+}
+.simid_creative_wrapper{
+    min-height: 100px;
+    min-width: 100px;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    div{
+        margin-top: 10px;
+    }
+    .options{
+        ul{
+            @include flex();
+            justify-content: left;
+            li{
+                list-style: none;
+                padding: 15px;
+                background-color: rgba(255, 255, 255, 0.2);
+                @include basic-transition();
+                cursor: pointer;
+                width: 49%;
+                margin-right: 2%;
+                margin-bottom: 15px;
+                &:nth-child(2n){
+                    margin-right: 0;
+                }
+                &:hover{
+                   background-color: rgba(255, 255, 255, 0.1); 
+                }
+                input[type=radio] {
+                    display: none; // 一旦
+                }
+                label{
+                    cursor: pointer;
+                    display: block;
+                    /* float: right;
+                    width: 95%; */
+                    line-height: 150%;
+                }
+                &#button_skip{
+                    background-color: #000;
+                }
+            }
+        }
+    }
+}
