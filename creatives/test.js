@@ -13,10 +13,14 @@ class SimidController extends BaseSimidCreative {
 
 }
 
+
+// タイムスタンプ生成
 var timestamp = new Date().getTime();
 
-
+// SIMID制御クラス
 const simidController = new SimidController();
+
+// メイン処理開始
 main();
 
 
@@ -42,7 +46,18 @@ function main(){
       });
     },
     updated: function () {
+      // SIMIDセッションスタート
       simidController.ready();
+
+      // ボタン処理
+      // スキップ
+      $(function(){
+        $("#button_skip").click(function(){
+            simidController.skip();
+            return false;
+          });
+      });
+
     },
     methods: {
 
@@ -52,11 +67,3 @@ function main(){
 
 
 
-// ボタン処理
-// スキップ
-$(function(){
-	$("#button_skip").click(function(){
-      simidController.skip();
-    	return false;
-    });
-});
