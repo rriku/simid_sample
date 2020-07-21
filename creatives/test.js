@@ -36,8 +36,8 @@ function main(){
       // 取得完了したらlistリストに代入
       this.all_date = response.data;
       for(var i=0;i<this.all_date.length;i++){
-        this.question_list.push(all_date[i].question);
-        this.answer_list.push(all_date[i].answer);
+        this.question_list.push(this.all_date[i].question);
+        this.answer_list.push(this.all_date[i].answer);
       }
       }.bind(this)).catch(function (e) {
         console.error(e)
