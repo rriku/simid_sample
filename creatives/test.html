@@ -9,10 +9,20 @@
   </head>
   <body>
   <div class="simid_creative_wrapper" id="simid_creative">
-    <div class="question">
+    <!-- <div class="question">
       放送と配信の視聴についてごにょごにょごにょごにょごにょごにょごにょごにょごにょごにょごにょごにょ
+    </div> -->
+    <div v-for="(data, index) in all_data"  :key="index" >
+      <div class="question">
+        {{ data.question }}
+      </div>
+      <div class="options">
+        <ul>
+          <li v-for="(answer, index) in data.answers" :key="index" >{{ answer }}</li>
+        </ul>
+      </div>
     </div>
-    <div class="options">
+   <!--  <div>
       <ul>
         <li><input type="radio" name="q1" id="q1_1" value="いつもはテレビで見ている"><label for="q1_1">いつもはテレビで見ている</label></li>
         <li><input type="radio" name="q1" id="q1_2"  value="テレビとネットで半分程度"><label for="q1_2">テレビとネットで半分程度</label></li>
@@ -21,7 +31,7 @@
         <li><input type="radio" name="q1" id="q1_5"  value="テレビで放送しているのを知らない"><label for="q1_5">テレビで放送しているのを知らない</label></li>
         <li id="button_skip">アンケートをスキップ</li>
       </ul>
-    </div>
+    </div> -->
   </div>
   <script src="axios.min.js"> </script>
   <script src="vue-2.5.min.js"> </script>
