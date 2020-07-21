@@ -16,9 +16,7 @@ class SimidController extends BaseSimidCreative {
 var timestamp = new Date().getTime();
 
 
-// メイン処理ここから
 const simidController = new SimidController();
-simidController.ready();
 main();
 
 
@@ -44,8 +42,7 @@ function main(){
       });
     },
     updated: function () {
-
-
+      simidController.ready();
     },
     methods: {
 
