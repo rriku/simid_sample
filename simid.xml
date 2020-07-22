@@ -31,7 +31,7 @@
 <ClickTracking id="123">https://www.example.com/click</ClickTracking>
 </VideoClicks>
 <MediaFiles>
-<MediaFile delivery="progressive" type="video/mp4"></MediaFile>
+<MediaFile delivery="progressive" type="video/mp4">https://storage.googleapis.com/interactive-media-ads/media/android.mp4</MediaFile>
 <InteractiveCreativeFile type="text/html" apiFramework="SIMID" variableDuration="true">https://rriku.github.io/simid_sample/creatives/test.html</InteractiveCreativeFile>
 </MediaFiles>
 </Linear>
