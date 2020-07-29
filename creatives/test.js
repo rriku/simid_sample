@@ -59,13 +59,13 @@ function main(){
 
         $("input[type=checkbox]").click(function(){
             var $count = $("input[type=checkbox]:checked").length;
-            var $not = $('input[type=checkbox]').not(':checked')
+            var $not = $('input[type=checkbox]').not(':checked');
         
                 //チェックが3つ付いたら、チェックされてないチェックボックスにdisabledを加える
             if($count >= 1) {
                 $not.attr("disabled",true);
+                $not.parent().css('opacity',0.6);
             }else{
-                //3つ以下ならisabledを外す
                 $not.attr("disabled",false);
             }
         });
