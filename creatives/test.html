@@ -18,7 +18,9 @@
       </div>
       <div class="options">
         <ul>
-          <li v-for="(answer, a_index) in data.answers" :key="a_index" ><input type="radio" name="a_index" v-bind:value="answer">{{ answer }}</li>
+          <li v-for="(answer, a_index) in data.answers" :key="a_index" >
+              <input type="radio" name="a_index" v-bind:value="answer" v-bind:id="d_index + '_' + a_index"><label  v-bind:for="d_index + '_' + a_index">{{ answer }}</label>
+            </li>
           <li id="button_skip">アンケートをスキップ</li>
         </ul>
       </div>
