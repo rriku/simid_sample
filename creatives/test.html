@@ -21,7 +21,7 @@
           <li v-for="(answer, a_index) in data.answers" :key="a_index" >
               <input type="checkbox" name="a_index" v-bind:value="answer" v-bind:id="d_index + '_' + a_index"><label v-bind:for="d_index + '_' + a_index">{{ answer }}</label>
             </li>
-          <li id="button_skip">アンケートをスキップ</li>
+          <li id="button_submit">アンケートをスキップ</li>
         </ul>
       </div>
     </div>
