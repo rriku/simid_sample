@@ -67,7 +67,7 @@ function main(){
                 $not.parent().css('opacity',0.6);
             }else{
                 $not.attr("disabled",false);
-                $not.parent().css('opacity',0.1);
+                $not.parent().css('opacity',1);
             }
         });
 
