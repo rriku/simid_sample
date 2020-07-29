@@ -20,6 +20,9 @@ var timestamp = new Date().getTime();
 // SIMID制御クラス
 const simidController = new SimidController();
 
+// 送信可能フラグ
+var submitFlg;
+
 // メイン処理開始
 main();
 
@@ -52,22 +55,38 @@ function main(){
       // ボタン処理
       // スキップ
       $(function(){
-        $("#button_skip").click(function(){
-            simidController.skip();
+        $("#button_submit").click(function(){
+            if(submitFlg){
+
+            }else{
+              simidController.skip();
+            }
             return false;
           });
 
+        // チェックが付いた時の処理
         $("input[type=checkbox]").click(function(){
             var $count = $("input[type=checkbox]:checked").length;
             var $not = $('input[type=checkbox]').not(':checked');
         
-                //チェックが3つ付いたら、チェックされてないチェックボックスにdisabledを加える
+            //チェックが3つ付いたら、チェックされてないチェックボックスにdisabledを加える
             if($count >= 1) {
                 $not.attr("disabled",true);
                 $not.parent().css('opacity',0.6);
+
+                // スキップボタンを送信ボタンに変更
+                submitFlg ="1";
+                $("#button_submit").css("background-color","#a92f61");
+                $("#button_submit").text("アンケートを送信する")
+
             }else{
                 $not.attr("disabled",false);
                 $not.parent().css('opacity',1);
+
+                // スキップボタンを送信ボタンに変更
+                submitFlg ="0";
+                $("#button_submit").css("background-color","inherit");
+                $("#button_submit").text("アンケートをスキップ")
             }
         });
 
