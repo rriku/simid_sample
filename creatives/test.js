@@ -25,6 +25,12 @@ const simidController = new SimidController();
 // 送信可能フラグ
 var submitFlg;
 
+// アンケートID（広告ID）
+var suerveyId;
+
+// 回答
+var answer_data = {};
+
 // メイン処理開始
 main();
 
@@ -59,7 +65,12 @@ function main(){
       $(function(){
         $("#button_submit").click(function(){
             if(submitFlg){
-
+              $.ajax({
+                  url: "https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&json_data=ajaxtesajaxtes" ,
+                  dataType: 'html'
+              }).done(function (data) {
+                  console.log("送信が完了しました");
+              });
             }else{
               simidController.skip();
             }
