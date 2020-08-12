@@ -9,6 +9,7 @@ class SimidController extends BaseSimidCreative {
   skip(){
     console.log("skip");
     this.simidProtocol.sendMessage(CreativeMessage.REQUEST_SKIP);
+    console.log(  this.simidProtocol.sendMessage(CreativeMessage.GET_MEDIA_STATE)  );
   }
 
 }
