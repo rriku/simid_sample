@@ -32,7 +32,7 @@ var suerveyId;
 var answer_data = "TESTDAYOTESTDAYO";
 
 // ピクセルタグ
-var basImgTag = "<img src='https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&json_data=__JSON_DATA__' />";
+var basImgTag = "<img style='height:1px;width:1px;' src='https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&json_data=__JSON_DATA__' />";
 
 // メイン処理開始
 main();
@@ -68,7 +68,7 @@ function main(){
       $(function(){
         $("#button_submit").click(function(){
             if(submitFlg){
-              $("#live_stream_responsive_wrapper").html(basImgTag.replace("__JSON_DATA__",answer_data));
+              $("#simid_creative").html(basImgTag.replace("__JSON_DATA__",answer_data));
               console.log("送信完了");
             }else{
               simidController.skip();
