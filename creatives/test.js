@@ -1,3 +1,7 @@
+const params = {
+  'uri': "https://video.tv-tokyo.co.jp/personal/",
+};
+
 class SimidController extends BaseSimidCreative {
   // コンストラクタ
   constructor() {
@@ -12,11 +16,12 @@ class SimidController extends BaseSimidCreative {
     var mediaState = this.simidProtocol.sendMessage(CreativeMessage.GET_MEDIA_STATE) ;
     console.log( mediaState );
   }
+  
 
   // プラポリリンク押下
   privacy(){
     console.log("privacy");
-    this.simidProtocol.sendMessage(CreativeMessage.REQUEST_NAVIGATION,"https://video.tv-tokyo.co.jp/personal/");
+    this.simidProtocol.sendMessage(CreativeMessage.REQUEST_NAVIGATION, params );
   }
 
 }
