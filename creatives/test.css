@@ -3,6 +3,13 @@ body {
   background-color: #000;
   margin: 0;
   font-family: 'Kosugi Maru', sans-serif;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 3.5vw;
+  }
 }
 
 .simid_creative_wrapper {
@@ -75,8 +82,7 @@ input[type="checkbox"] + label {
   padding: 2vw 0;
   padding-left: 35px;
   margin-bottom: 20px;
-  font: 14px/20px 'Open Sans', Arial, sans-serif;
-  color: #ddd;
+  font-family: 'Open Sans', Arial, sans-serif;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
