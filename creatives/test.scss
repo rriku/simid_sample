@@ -42,6 +42,12 @@ body{
     div{
         margin-top: 10px;
     }
+    #button_privacy{
+        text-align: center;
+        background-color: #333333;
+        padding: 5px;
+        color: #fff;
+    }
     .options{
         ul{
             @include flex();
