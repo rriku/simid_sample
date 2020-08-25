@@ -61,6 +61,7 @@ body {
 
 .simid_creative_wrapper .options ul li#button_skip {
   background-color: #000;
+  padding: 2vw;
 }
 
 /*Checkboxes styles*/
