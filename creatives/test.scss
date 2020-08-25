@@ -11,12 +11,12 @@
 	-webkit-flex-wrap: wrap;
 	flex-wrap:wrap;
 }
-@mixin break_smp($wi:768) {
+@mixin break_smp($wi:480) {
     @media screen and (max-width:#{$wi}px) {
         @content;
     }
 }
-@mixin break_pc($wi:769) {
+@mixin break_pc($wi:480) {
     @media screen and (min-width:#{$wi}px) {
         @content;
     }
