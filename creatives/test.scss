@@ -34,7 +34,7 @@ body{
             justify-content: left;
             li{
                 list-style: none;
-                padding: 2vw;
+                padding: 0;
                 background-color: rgba(255, 255, 255, 0.2);
                 @include basic-transition();
                 cursor: pointer;
@@ -76,6 +76,7 @@ input[type="checkbox"] { display: none; }
 input[type="checkbox"] + label {
   display: block;
   position: relative;
+  padding:2vw 0;
   padding-left: 35px;
   margin-bottom: 20px;
   font: 14px/20px 'Open Sans', Arial, sans-serif;
@@ -96,7 +97,7 @@ input[type="checkbox"] + label:before {
   border: 1px solid #ffffff;
   position: absolute;
   left: 0;
-  top: 0;
+  top: calc(50% - 10px);
   opacity: .6;
   -webkit-transition: all .12s, border-color .08s;
   transition: all .12s, border-color .08s;
