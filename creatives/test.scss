@@ -34,7 +34,7 @@ body{
             justify-content: left;
             li{
                 list-style: none;
-                padding: 0;
+                padding: 0 2vw;
                 background-color: rgba(255, 255, 255, 0.2);
                 @include basic-transition();
                 cursor: pointer;
