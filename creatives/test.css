@@ -84,7 +84,6 @@ input[type="checkbox"] {
 
 input[type="checkbox"] + label {
   display: block;
-  position: relative;
   padding: 2vw 0;
   padding-left: 35px !important;
   margin-bottom: 20px;
@@ -112,7 +111,7 @@ input[type="checkbox"] + label:before {
   height: 20px;
   border: 1px solid #ffffff;
   position: absolute;
-  left: 0;
+  left: 2vw;
   top: calc(50% - 10px);
   opacity: .6;
   -webkit-transition: all .12s, border-color .08s;
@@ -122,7 +121,7 @@ input[type="checkbox"] + label:before {
 input[type="checkbox"]:checked + label:before {
   width: 10px;
   top: calc(50% - 15px);
-  left: 5px;
+  left: calc(2vw + 5px);
   border-radius: 0;
   opacity: 1;
   border-top-color: transparent;
