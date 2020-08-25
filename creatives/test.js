@@ -13,6 +13,12 @@ class SimidController extends BaseSimidCreative {
     console.log( mediaState );
   }
 
+  // プラポリリンク押下
+  privacy(){
+    console.log("privacy");
+    this.simidProtocol.sendMessage(CreativeMessage.REQUEST_NAVIGATION , "https://video.tv-tokyo.co.jp/personal/");
+  }
+
 }
 
 
@@ -65,8 +71,9 @@ function main(){
       simidController.ready();
 
       // ボタン処理
-      // スキップ
       $(function(){
+
+        // スキップ
         $("#button_submit").click(function(){
             if(submitFlg){
               $("#simid_creative").html(basImgTag.replace("__JSON_DATA__",JSON.stringify(answer_data)));
@@ -75,7 +82,13 @@ function main(){
               simidController.skip();
             }
             return false;
-          });
+        });
+
+        // プラポリ
+        $("#button_privacy").click(function(){
+            simidController.privacy();
+          return false;
+      });
 
         // チェックが付いた時の処理
         $("input[type=checkbox]").click(function(){

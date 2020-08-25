@@ -318,6 +318,7 @@ CreativeMessage = {
   REQUEST_VOLUME: 'Creative:requestVolume',
   REQUEST_TRACKING: 'Creative:reportTracking',
   REQUEST_CHANGE_AD_DURATION: 'Creative:requestChangeAdDuration',
+  REQUEST_NAVIGATION: 'Creative:requestNavigation',
 };
 
 /**
@@ -338,6 +339,7 @@ EventsThatRequireResponse = [
   CreativeMessage.REQUEST_FULL_RESIZE,
   CreativeMessage.REQUEST_CHANGE_AD_DURATION,
   CreativeMessage.REPORT_TRACKING,
+  CreativeMessage.REQUEST_NAVIGATION,
   PlayerMessage.INIT,
   PlayerMessage.START_CREATIVE,
   PlayerMessage.AD_SKIPPED,
