@@ -56,7 +56,7 @@ body{
                 margin-right: 2%;
                 margin-bottom: 15px;
                 position: relative;
-                @include break_pc(){
+                @include break_smp(){
                     margin-bottom: 2vw; 
                 }
                 &:nth-child(2n){
