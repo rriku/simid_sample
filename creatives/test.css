@@ -46,6 +46,12 @@ body {
   position: relative;
 }
 
+@media screen and (min-width: 480px) {
+  .simid_creative_wrapper .options ul li {
+    margin-bottom: 2vw;
+  }
+}
+
 .simid_creative_wrapper .options ul li:nth-child(2n) {
   margin-right: 0;
 }
@@ -87,6 +93,12 @@ input[type="checkbox"] + label {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+}
+
+@media screen and (max-width: 480px) {
+  input[type="checkbox"] + label {
+    padding: 1vw 0;
+  }
 }
 
 input[type="checkbox"] + label:last-child {

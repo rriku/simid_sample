@@ -56,6 +56,9 @@ body{
                 margin-right: 2%;
                 margin-bottom: 15px;
                 position: relative;
+                @include break_pc(){
+                    margin-bottom: 2vw; 
+                }
                 &:nth-child(2n){
                     margin-right: 0;
                 }
@@ -92,6 +95,9 @@ input[type="checkbox"] + label {
   display: block;
   position: relative;
   padding:2vw 0;
+  @include break_smp(){
+      padding:1vw 0;
+  }
   padding-left: 35px;
   margin-bottom: 20px;
   font-family:'Open Sans', Arial, sans-serif;
