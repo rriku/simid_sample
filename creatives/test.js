@@ -16,7 +16,7 @@ class SimidController extends BaseSimidCreative {
   // プラポリリンク押下
   privacy(){
     console.log("privacy");
-    this.simidProtocol.sendMessage(CreativeMessage.REQUEST_NAVIGATION , "https://video.tv-tokyo.co.jp/personal/");
+    this.simidProtocol.sendMessage(CreativeMessage.REQUEST_NAVIGATION );
   }
 
 }
