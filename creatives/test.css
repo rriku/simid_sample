@@ -10,7 +10,6 @@ body {
   min-width: 100px;
   height: 100%;
   width: 100%;
-  padding: 10px;
 }
 
 .simid_creative_wrapper div {
@@ -29,7 +28,7 @@ body {
 
 .simid_creative_wrapper .options ul li {
   list-style: none;
-  padding: 15px;
+  padding: 2vw;
   background-color: rgba(255, 255, 255, 0.2);
   transition: all 0.3s;
   -webkit-transition: all 0.3s;
@@ -37,6 +36,7 @@ body {
   width: 49%;
   margin-right: 2%;
   margin-bottom: 15px;
+  position: relative;
 }
 
 .simid_creative_wrapper .options ul li:nth-child(2n) {
