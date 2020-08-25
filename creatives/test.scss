@@ -98,7 +98,7 @@ input[type="checkbox"] + label {
   @include break_smp(){
       padding:1vw 0;
   }
-  padding-left: 35px;
+  padding-left: 35px!important;
   margin-bottom: 20px;
   font-family:'Open Sans', Arial, sans-serif;
   cursor: pointer;
