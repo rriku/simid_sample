@@ -103,7 +103,7 @@ input[type="checkbox"] + label:before {
 
 input[type="checkbox"]:checked + label:before {
   width: 10px;
-  top: -5px;
+  top: calc(50% - 15px);
   left: 5px;
   border-radius: 0;
   opacity: 1;
