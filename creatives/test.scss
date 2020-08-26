@@ -33,14 +33,19 @@ body{
         font-size: 3.5vw;
     }
 }
+#simid_creative{
+    opacity: 0;
+    @include basic-transition();
+    &.show{
+        opacity: 1;
+    }
+}
 .simid_creative_wrapper{
     min-height: 100px;
     min-width: 100px;
     height: 100%;
     width: 100%;
     position: relative;
-    opacity: 0;
-    @include basic-transition();
     // padding: 10px;
     div{
         margin-top: 10px;
