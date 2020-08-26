@@ -98,6 +98,7 @@ function main(){
 
               // $("#simid_creative").html(basImgTag.replace("__JSON_DATA__",JSON.stringify(answer_data)));
               $("#simid_creative").html(basImgTag);
+              console.log(basImgTag);
 
               console.log("送信完了");
               simidController.skip();
