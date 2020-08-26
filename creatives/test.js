@@ -41,7 +41,7 @@ answer_data.suerveyId = suerveyId ;
 answer_data.answers = [];
 
 // ピクセルタグ
-var basImgTag = "<img style='height:1px;width:1px;' src='https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&answer_data=__JSON_DATA__&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua' />";
+var basImgTag = "<img style='height:1px;width:1px;' src='https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&survey_id=__SURVEY_ID__&answer_data=__JSON_DATA__&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua' />";
 
 // メイン処理開始
 main();
@@ -94,8 +94,12 @@ function main(){
               $("input:checked").each(function() {
                 answer_data.answers.push($(this).val());
               })
+              
+              basImgTag = basImgTag.replace("__SURVEY_ID__",JSON.stringify(answer_data.answers));
+              basImgTag = basImgTag.replace("__JSON_DATA__",JSON.stringify(answer_data.suerveyId));
 
-              $("#simid_creative").html(basImgTag.replace("__JSON_DATA__",JSON.stringify(answer_data)));
+              // $("#simid_creative").html(basImgTag.replace("__JSON_DATA__",JSON.stringify(answer_data)));
+              $("#simid_creative").html(basImgTag);
 
               console.log("送信完了");
               simidController.skip();
