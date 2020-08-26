@@ -71,6 +71,10 @@ function main(){
       });
     },
     updated: function () {
+
+      // 要素を読み込んだら表示
+      $("#simid_creative").addClass("show");
+
       // SIMIDセッションスタート
       simidController.ready();
 
