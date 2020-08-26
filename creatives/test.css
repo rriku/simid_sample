@@ -139,6 +139,8 @@ input[type="checkbox"]:checked + label:before {
 
 .progressWrapper {
   width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 .progressWrapper input#time {

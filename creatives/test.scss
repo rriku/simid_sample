@@ -146,6 +146,8 @@ input[type="checkbox"]:checked + label:before {
 // プログレスバー
 .progressWrapper {
     width: 100%;
+    position:absolute;
+    bottom: 0;
     input#time{
         height: 8px;
     }

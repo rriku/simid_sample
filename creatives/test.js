@@ -158,7 +158,7 @@ function countdown(){
 
   if (restMs < 0) {
     resetTimer();
-    skip();
+    simidController.skip();
   }
 }
 
