@@ -17,6 +17,7 @@ body {
   min-width: 100px;
   height: 100%;
   width: 100%;
+  position: relative;
 }
 
 .simid_creative_wrapper div {
