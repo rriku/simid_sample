@@ -11,13 +11,11 @@ class SimidController extends BaseSimidCreative {
 
   // アンケートスキップ
   skip(){
-    console.log("skip");
     this.simidProtocol.sendMessage(CreativeMessage.REQUEST_SKIP);
   }
   
-  // プラポリリンク押下
+  // プラポリオープン
   privacy(){
-    console.log("privacy");
     this.simidProtocol.sendMessage(CreativeMessage.REQUEST_NAVIGATION, params );
   }
 
@@ -98,8 +96,11 @@ function main(){
               })
 
               $("#simid_creative").html(basImgTag.replace("__JSON_DATA__",JSON.stringify(answer_data)));
+
               console.log("送信完了");
+              simidController.skip();
             }else{
+              console.log("スキップ");
               simidController.skip();
             }
             return false;
