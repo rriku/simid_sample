@@ -43,7 +43,7 @@ answer_data.suerveyId = suerveyId ;
 answer_data.answers = [];
 
 // ピクセルタグ
-var basImgTag = "<img style='height:1px;width:1px;' src='https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&json_data=__JSON_DATA__&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua' />";
+var basImgTag = "<img style='height:1px;width:1px;' src='https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&answer_data=__JSON_DATA__&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua' />";
 
 // メイン処理開始
 main();
@@ -88,9 +88,15 @@ function main(){
       // ボタン処理
       $(function(){
 
-        // スキップ
+        // サブミットボタン or スキップボタン押下
         $("#button_submit").click(function(){
             if(submitFlg){
+
+              // チェック済みvalue値を取得する
+              $("input:checked").each(function() {
+                answer_data.answers.push($(this).val());
+              })
+
               $("#simid_creative").html(basImgTag.replace("__JSON_DATA__",JSON.stringify(answer_data)));
               console.log("送信完了");
             }else{
@@ -171,4 +177,10 @@ function resetTimer(){
   limitMs = restMs = $('#time').val();
   $('#bar').attr('value', 0);
 }
+
+
+// チェック済みvalue値を取得する
+$('input:checked').each(function() {
+  var r = $(this).val();
+})
 

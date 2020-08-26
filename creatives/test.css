@@ -39,6 +39,7 @@ body {
   background-color: #333333;
   padding: 5px;
   color: #fff;
+  cursor: pointer;
 }
 
 .simid_creative_wrapper .options ul {
