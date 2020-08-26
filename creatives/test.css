@@ -136,3 +136,35 @@ input[type="checkbox"]:checked + label:before {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+.progressWrapper {
+  width: 100%;
+}
+
+progress {
+  /* Turn off default styling. */
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  height: 10px;
+  width: 100%;
+  color: red;
+  /* IE */
+  background: transparent;
+  /* Firefox */
+}
+
+/* Chrome needs '-webkit-progress-value' and '-webkit-progress-bar' attributes. */
+progress::-webkit-progress-value {
+  background: red;
+}
+
+progress::-webkit-progress-bar {
+  background: transparent;
+}
+
+/* Firefox needs only '-moz-progress-bar' attiribute. */
+progress::-moz-progress-bar {
+  background: red;
+}

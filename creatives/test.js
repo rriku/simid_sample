@@ -13,11 +13,8 @@ class SimidController extends BaseSimidCreative {
   skip(){
     console.log("skip");
     this.simidProtocol.sendMessage(CreativeMessage.REQUEST_SKIP);
-    var mediaState = this.simidProtocol.sendMessage(CreativeMessage.GET_MEDIA_STATE) ;
-    console.log( mediaState );
   }
   
-
   // プラポリリンク押下
   privacy(){
     console.log("privacy");
@@ -37,14 +34,16 @@ const simidController = new SimidController();
 var submitFlg;
 
 // アンケートID（広告ID）
-var suerveyId;
+var suerveyId = "123456";
 
 // 回答
 var answer_data = {};
-answer_data = {"survey_id" : "8302813","items":[{"question": "質問1の文章質問1の文章質問1の文章","answers": "質問1の回答質問1の回答質問1の回答"},{"question": "質問2の文章質問2の文章質問2の文章","answers": "質問2の回答質問2の回答質問2の回答"}]};
+// answer_data = {"survey_id" : "8302813","items":[{"question": "質問1の文章質問1の文章質問1の文章","answers": "質問1の回答質問1の回答質問1の回答"},{"question": "質問2の文章質問2の文章質問2の文章","answers": "質問2の回答質問2の回答質問2の回答"}]};
+answer_data.suerveyId = suerveyId ;
+answer_data.answers = [];
 
 // ピクセルタグ
-var basImgTag = "<img style='height:1px;width:1px;' src='https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&json_data=__JSON_DATA__' />";
+var basImgTag = "<img style='height:1px;width:1px;' src='https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&json_data=__JSON_DATA__&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua' />";
 
 // メイン処理開始
 main();
@@ -74,6 +73,13 @@ function main(){
     updated: function () {
       // SIMIDセッションスタート
       simidController.ready();
+
+      // タイマー開始
+      $(function () {
+        maxBar = $('#bar').attr('max');
+        resetTimer();
+        timer = setInterval('countdown()', resolutionMs);
+      });
 
       // ボタン処理
       $(function(){
@@ -133,4 +139,32 @@ function main(){
 }
 
 
+
+
+// タイマー関連関数
+var timer,
+  limitMs = 0,
+  restMs = 0,
+  resolutionMs = 50,    /* NOTE: Too small value does not work on IE11. */
+  maxBar;
+
+function countdown(){
+  restMs -= resolutionMs;
+
+  var restRate = (limitMs - restMs) / limitMs;
+  var restBarLength = maxBar * restRate
+
+  $('#bar').attr('value', restBarLength);
+
+  if (restMs < 0) {
+    resetTimer();
+    alert('time expired');
+  }
+}
+
+function resetTimer(){
+  clearInterval(timer);
+  limitMs = restMs = $('#time').val();
+  $('#bar').attr('value', 0);
+}
 
