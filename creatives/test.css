@@ -141,6 +141,10 @@ input[type="checkbox"]:checked + label:before {
   width: 100%;
 }
 
+.progressWrapper input#time {
+  height: 8px;
+}
+
 progress {
   /* Turn off default styling. */
   appearance: none;
@@ -149,7 +153,7 @@ progress {
   border: 0;
   height: 10px;
   width: 100%;
-  color: red;
+  color: #dcdc11;
   /* IE */
   background: transparent;
   /* Firefox */
@@ -157,7 +161,7 @@ progress {
 
 /* Chrome needs '-webkit-progress-value' and '-webkit-progress-bar' attributes. */
 progress::-webkit-progress-value {
-  background: red;
+  background: #dcdc11;
 }
 
 progress::-webkit-progress-bar {
@@ -166,5 +170,5 @@ progress::-webkit-progress-bar {
 
 /* Firefox needs only '-moz-progress-bar' attiribute. */
 progress::-moz-progress-bar {
-  background: red;
+  background: #dcdc11;
 }

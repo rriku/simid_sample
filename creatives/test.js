@@ -158,7 +158,7 @@ function countdown(){
 
   if (restMs < 0) {
     resetTimer();
-    alert('time expired');
+    skip();
   }
 }
 

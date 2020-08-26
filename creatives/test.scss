@@ -146,31 +146,33 @@ input[type="checkbox"]:checked + label:before {
 // プログレスバー
 .progressWrapper {
     width: 100%;
-  }
-  
-  progress {
+    input#time{
+        height: 8px;
+    }
+}
+
+progress {
     /* Turn off default styling. */
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
     border: 0;
-  
     height: 10px;
     width: 100%;
-    color: red;       /* IE */
+    color: #dcdc11;       /* IE */
     background: transparent; /* Firefox */
-  }
-  
-  /* Chrome needs '-webkit-progress-value' and '-webkit-progress-bar' attributes. */
-  progress::-webkit-progress-value {
-    background: red;
-  }
-  
-  progress::-webkit-progress-bar {
+}
+
+/* Chrome needs '-webkit-progress-value' and '-webkit-progress-bar' attributes. */
+progress::-webkit-progress-value {
+    background: #dcdc11;
+}
+
+progress::-webkit-progress-bar {
     background: transparent;
-  }
-  
-  /* Firefox needs only '-moz-progress-bar' attiribute. */
-  progress::-moz-progress-bar {
-    background: red;
-  }
+}
+
+/* Firefox needs only '-moz-progress-bar' attiribute. */
+progress::-moz-progress-bar {
+    background: #dcdc11;
+}
