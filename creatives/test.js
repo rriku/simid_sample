@@ -1,5 +1,5 @@
 const params = {
-  'uri': "https://video.tv-tokyo.co.jp/personal/",
+  'uri': "http://dev-video.tv-tokyo.co.jp.s3-website-ap-northeast-1.amazonaws.com/personal/",
 };
 
 class SimidController extends BaseSimidCreative {
