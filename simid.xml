@@ -9,7 +9,7 @@
       <Creatives>
         <Creative sequence="1">
           <Linear>
-            <Duration>00:01:55</Duration>
+            <Duration>00:01:00</Duration>
             <TrackingEvents>
               <Tracking event="start">https://www.example.com/start</Tracking>
               <Tracking event="firstQuartile">https://www.example.com/firstQuartile</Tracking>
