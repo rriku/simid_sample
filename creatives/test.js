@@ -2,6 +2,28 @@ const params = {
   'uri': "http://dev-video.tv-tokyo.co.jp.s3-website-ap-northeast-1.amazonaws.com/personal/",
 };
 
+// タイムスタンプ生成
+var timestamp = new Date().getTime();
+
+// SIMID制御クラス
+const simidController = new SimidController();
+
+// 送信可能フラグ
+var submitFlg;
+
+// アンケートID（広告ID）
+var suerveyId = "123456";
+
+// 回答
+var answer_data = [];
+// answer_data = {"survey_id" : "8302813","items":[{"question": "質問1の文章質問1の文章質問1の文章","answers": "質問1の回答質問1の回答質問1の回答"},{"question": "質問2の文章質問2の文章質問2の文章","answers": "質問2の回答質問2の回答質問2の回答"}]};
+
+// ピクセルタグ
+var basImgTag = "<img style='height:1px;width:1px;' src='https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&survey_id=__SURVEY_ID__&answer_data=__ANSWER_DATA__&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua&device_id=__DEVICE_ID__' />";
+
+// 広告識別子
+var deviceId = "";
+
 class SimidController extends BaseSimidCreative {
   // コンストラクタ
   constructor() {
@@ -29,30 +51,14 @@ class SimidController extends BaseSimidCreative {
   onStart(eventData) {
     super.onStart(eventData);
     console.log(JSON.parse(this.creativeData.adParameters));
-    console.log(JSON.parse(this.environmentData.deviceId));
+    if(this.environmentData.deviceId){
+      deviceId = this.environmentData.deviceId
+    }
   }
 
 }
 
 
-// タイムスタンプ生成
-var timestamp = new Date().getTime();
-
-// SIMID制御クラス
-const simidController = new SimidController();
-
-// 送信可能フラグ
-var submitFlg;
-
-// アンケートID（広告ID）
-var suerveyId = "123456";
-
-// 回答
-var answer_data = [];
-// answer_data = {"survey_id" : "8302813","items":[{"question": "質問1の文章質問1の文章質問1の文章","answers": "質問1の回答質問1の回答質問1の回答"},{"question": "質問2の文章質問2の文章質問2の文章","answers": "質問2の回答質問2の回答質問2の回答"}]};
-
-// ピクセルタグ
-var basImgTag = "<img style='height:1px;width:1px;' src='https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&survey_id=__SURVEY_ID__&answer_data=__ANSWER_DATA__&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua' />";
 
 // メイン処理開始
 main();
@@ -110,6 +116,7 @@ function main(){
               })
               
               basImgTag = basImgTag.replace("__SURVEY_ID__",suerveyId);
+              basImgTag = basImgTag.replace("__DEVICE_ID__",deviceId);
               basImgTag = basImgTag.replace("__ANSWER_DATA__",JSON.stringify(answer_data));
 
               // $("#simid_creative").html(basImgTag.replace("__JSON_DATA__",JSON.stringify(answer_data)));
