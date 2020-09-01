@@ -20,10 +20,10 @@ class SimidController extends BaseSimidCreative {
   }
 
   // プラポリオープン
-  getDeviceId(){
-    console.log(this.creativeData.adParameters);
-    return this.environmentData.deviceId;
-  }
+  //getDeviceId(){
+  //  console.log(this.creativeData.adParameters);
+  //  return this.environmentData.deviceId;
+  // }
 
 }
 
@@ -81,8 +81,7 @@ function main(){
       simidController.ready();
 
 
-      console.log("aaa");
-      console.log(simidController.getDeviceId);
+      console.log(simidController.creativeData.adParameters);
 
       // タイマー開始
       $(function () {
