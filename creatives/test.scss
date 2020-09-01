@@ -55,10 +55,17 @@ body{
     }
     #button_privacy{
         text-align: center;
-        background-color: #333333;
         padding: 5px;
         color: #fff;
         cursor: pointer;
+        width: 30px;
+        position: absolute;
+        top: 1.5vw;
+        right: 1.5vw;
+        @include break_smp(){
+            top: 0;
+            right: 0;
+        }
     }
     .options{
         ul{
