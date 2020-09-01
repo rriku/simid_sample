@@ -19,6 +19,11 @@ class SimidController extends BaseSimidCreative {
     this.simidProtocol.sendMessage(CreativeMessage.REQUEST_NAVIGATION, params );
   }
 
+  // プラポリオープン
+  getDeviceId(){
+    return his.environmentData.deviceId();
+  }
+
 }
 
 
@@ -76,7 +81,7 @@ function main(){
 
 
       console.log("aaa");
-      console.log(this.environmentData.deviceId);
+      console.log(simidController.getDeviceId);
 
       // タイマー開始
       $(function () {
