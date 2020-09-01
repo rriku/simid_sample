@@ -178,7 +178,7 @@ progress {
   width: 100%;
   color: #dcdc11;
   /* IE */
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
   /* Firefox */
 }
 
@@ -188,7 +188,7 @@ progress::-webkit-progress-value {
 }
 
 progress::-webkit-progress-bar {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* Firefox needs only '-moz-progress-bar' attiribute. */
