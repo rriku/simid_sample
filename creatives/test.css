@@ -178,20 +178,20 @@ progress {
   width: 100%;
   color: #dcdc11;
   /* IE */
-  background: transparent;
+  background: #FFF;
   /* Firefox */
 }
 
 /* Chrome needs '-webkit-progress-value' and '-webkit-progress-bar' attributes. */
 progress::-webkit-progress-value {
-  background: #dcdc11;
+  background: #FFF;
 }
 
 progress::-webkit-progress-bar {
-  background: transparent;
+  background: #FFF;
 }
 
 /* Firefox needs only '-moz-progress-bar' attiribute. */
 progress::-moz-progress-bar {
-  background: #dcdc11;
+  background: #FFF;
 }
