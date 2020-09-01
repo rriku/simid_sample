@@ -14,11 +14,14 @@ var suerveyId = "123456";
 // 回答
 var answer_data = [];
 
-// ピクセルタグ
-var basImgTag = "<img style='height:1px;width:1px;' src='https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&survey_id=__SURVEY_ID__&answer_data=__ANSWER_DATA__&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua&device_id=__DEVICE_ID__' />";
-
 // 広告識別子
 var deviceId = "";
+
+// イベント
+var event = "1";
+
+// ピクセルタグ
+var basImgTag = "<img style='height:1px;width:1px;' src='https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&survey_id=__SURVEY_ID__&answer_data=__ANSWER_DATA__&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua&identifier__DEVICE_ID__&event__EVENT__' />";
 
 class SimidController extends BaseSimidCreative {
   // コンストラクタ
@@ -113,19 +116,30 @@ function main(){
               $("input:checked").each(function() {
                 answer_data.push($(this).val());
               })
-              
-              basImgTag = basImgTag.replace("__SURVEY_ID__",suerveyId);
-              basImgTag = basImgTag.replace("__DEVICE_ID__",deviceId);
-              basImgTag = basImgTag.replace("__ANSWER_DATA__",JSON.stringify(answer_data));
 
-              // $("#simid_creative").html(basImgTag.replace("__JSON_DATA__",JSON.stringify(answer_data)));
+              event = 2; //回答
+              
+              // ピクセルタグを置換
+              replacePixel()
+
+              // 送信
               $("#simid_creative").html(basImgTag);
               console.log(basImgTag);
 
-              console.log("送信完了");
+              // 送信完了したら残りの広告はスキップ
               simidController.skip();
             }else{
-              console.log("スキップ");
+              // 広告スキップ
+
+              event = 3; //スキップ
+
+              // ピクセルタグを置換
+              replacePixel()
+
+              // 送信
+              $("#simid_creative").html(basImgTag);
+              console.log(basImgTag);
+
               simidController.skip();
             }
             return false;
@@ -191,7 +205,9 @@ function countdown(){
   $('#bar').attr('value', restBarLength);
 
   if (restMs < 0) {
-    resetTimer();
+    //　タイムアウト
+    // resetTimer();
+    event = "4"; // タイムアウト
     simidController.skip();
   }
 }
@@ -208,3 +224,11 @@ $('input:checked').each(function() {
   var r = $(this).val();
 })
 
+
+// ピクセルタグ置換
+function replacePixel(){
+  basImgTag = basImgTag.replace("__SURVEY_ID__",suerveyId);
+  basImgTag = basImgTag.replace("__DEVICE_ID__",deviceId);
+  basImgTag = basImgTag.replace("__EVENT__",event);
+  basImgTag = basImgTag.replace("__ANSWER_DATA__",JSON.stringify(answer_data));
+}
