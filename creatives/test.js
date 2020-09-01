@@ -25,6 +25,12 @@ class SimidController extends BaseSimidCreative {
   //  return this.environmentData.deviceId;
   // }
 
+  /** @override */
+  onStart(eventData) {
+    super.onStart(eventData);
+    console.log(JSON.parse(this.creativeData.adParameters));
+  }
+
 }
 
 
@@ -159,6 +165,13 @@ function main(){
 
     }
   })
+}
+
+/** @override */
+onStart(eventData) {
+  super.onStart(eventData);
+  this.surveyQuestions_ = JSON.parse(this.creativeData.adParameters);
+  this.showNextQuestion();
 }
 
 
