@@ -167,15 +167,6 @@ function main(){
   })
 }
 
-/** @override */
-onStart(eventData) {
-  super.onStart(eventData);
-  this.surveyQuestions_ = JSON.parse(this.creativeData.adParameters);
-  this.showNextQuestion();
-}
-
-
-
 
 // タイマー関連関数
 var timer,
