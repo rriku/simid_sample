@@ -159,12 +159,9 @@ input[type="checkbox"]:checked + label:before {
   width: 100%;
   position: absolute;
   bottom: 0;
-}
-
-@media screen and (min-width: 480px) {
-  .progressWrapper {
-    display: none;
-  }
+  /* @include break_pc(){
+        display: none;
+    } */
 }
 
 .progressWrapper input#time {

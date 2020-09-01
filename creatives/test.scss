@@ -160,9 +160,9 @@ input[type="checkbox"]:checked + label:before {
     width: 100%;
     position:absolute;
     bottom: 0;
-    @include break_pc(){
+    /* @include break_pc(){
         display: none;
-    }
+    } */
     input#time{
         height: 8px;
     }
