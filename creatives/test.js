@@ -5,9 +5,6 @@ const params = {
 // タイムスタンプ生成
 var timestamp = new Date().getTime();
 
-// SIMID制御クラス
-const simidController = new SimidController();
-
 // 送信可能フラグ
 var submitFlg;
 
@@ -16,7 +13,6 @@ var suerveyId = "123456";
 
 // 回答
 var answer_data = [];
-// answer_data = {"survey_id" : "8302813","items":[{"question": "質問1の文章質問1の文章質問1の文章","answers": "質問1の回答質問1の回答質問1の回答"},{"question": "質問2の文章質問2の文章質問2の文章","answers": "質問2の回答質問2の回答質問2の回答"}]};
 
 // ピクセルタグ
 var basImgTag = "<img style='height:1px;width:1px;' src='https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&survey_id=__SURVEY_ID__&answer_data=__ANSWER_DATA__&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua&device_id=__DEVICE_ID__' />";
@@ -59,6 +55,9 @@ class SimidController extends BaseSimidCreative {
 }
 
 
+
+// SIMID制御クラス
+const simidController = new SimidController();
 
 // メイン処理開始
 main();
