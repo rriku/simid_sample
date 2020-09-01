@@ -74,6 +74,10 @@ function main(){
       // SIMIDセッションスタート
       simidController.ready();
 
+
+      console.log("aaa");
+      console.log(this.environmentData.deviceId);
+
       // タイマー開始
       $(function () {
         maxBar = $('#bar').attr('max');
