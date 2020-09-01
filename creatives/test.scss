@@ -60,7 +60,7 @@ body{
         cursor: pointer;
         width: 30px;
         position: absolute;
-        bottom: 60px;
+        bottom: 30px;
         left: 1.5vw;
         opacity: 0.8;
         @include basic-transition();
@@ -70,6 +70,7 @@ body{
         @include break_smp(){
             top: 0;
             right: 0;
+            width: 15px;
         }
     }
     .options{
@@ -172,9 +173,9 @@ input[type="checkbox"]:checked + label:before {
     width: 100%;
     position:absolute;
     bottom: 0;
-    /* @include break_pc(){
+    @include break_pc(){
         display: none;
-    } */
+    }
     input#time{
         height: 8px;
     }

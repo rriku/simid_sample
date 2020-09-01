@@ -47,7 +47,7 @@ body {
   cursor: pointer;
   width: 30px;
   position: absolute;
-  bottom: 60px;
+  bottom: 30px;
   left: 1.5vw;
   opacity: 0.8;
   transition: all 0.3s;
@@ -62,6 +62,7 @@ body {
   .simid_creative_wrapper #button_privacy {
     top: 0;
     right: 0;
+    width: 15px;
   }
 }
 
@@ -176,9 +177,12 @@ input[type="checkbox"]:checked + label:before {
   width: 100%;
   position: absolute;
   bottom: 0;
-  /* @include break_pc(){
-        display: none;
-    } */
+}
+
+@media screen and (min-width: 480px) {
+  .progressWrapper {
+    display: none;
+  }
 }
 
 .progressWrapper input#time {
