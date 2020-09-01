@@ -119,12 +119,8 @@ function main(){
 
               event = 2; //回答
               
-              // ピクセルタグを置換
-              replacePixel()
-
-              // 送信
-              $("#simid_creative").html(basImgTag);
-              console.log(basImgTag);
+              // ピクセルタグを送信
+              postPixel()
 
               // 送信完了したら残りの広告はスキップ
               simidController.skip();
@@ -133,12 +129,8 @@ function main(){
 
               event = 3; //スキップ
 
-              // ピクセルタグを置換
-              replacePixel()
-
-              // 送信
-              $("#simid_creative").html(basImgTag);
-              console.log(basImgTag);
+              // ピクセルタグを送信
+              postPixel()
 
               simidController.skip();
             }
@@ -208,6 +200,7 @@ function countdown(){
     //　タイムアウト
     // resetTimer();
     event = "4"; // タイムアウト
+    postPixel();
     simidController.skip();
   }
 }
@@ -226,9 +219,13 @@ $('input:checked').each(function() {
 
 
 // ピクセルタグ置換
-function replacePixel(){
+function postPixel(){
   basImgTag = basImgTag.replace("__SURVEY_ID__",suerveyId);
   basImgTag = basImgTag.replace("__DEVICE_ID__",deviceId);
   basImgTag = basImgTag.replace("__EVENT__",event);
   basImgTag = basImgTag.replace("__ANSWER_DATA__",JSON.stringify(answer_data));
+
+  // 送信
+  $("#simid_creative").html(basImgTag);
+  console.log(basImgTag);
 }
