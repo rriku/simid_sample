@@ -21,7 +21,7 @@ class SimidController extends BaseSimidCreative {
 
   // プラポリオープン
   getDeviceId(){
-    return his.environmentData.deviceId();
+    return this.environmentData.deviceId();
   }
 
 }
