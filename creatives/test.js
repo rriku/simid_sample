@@ -117,7 +117,7 @@ function main(){
                 answer_data.push($(this).val());
               })
 
-              event = 2; //回答
+              event = "2"; //回答
               
               // ピクセルタグを送信
               postPixel()
@@ -127,7 +127,7 @@ function main(){
             }else{
               // 広告スキップ
 
-              event = 3; //スキップ
+              event = "3"; //スキップ
 
               // ピクセルタグを送信
               postPixel()
