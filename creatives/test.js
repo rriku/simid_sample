@@ -29,6 +29,7 @@ class SimidController extends BaseSimidCreative {
   onStart(eventData) {
     super.onStart(eventData);
     console.log(JSON.parse(this.creativeData.adParameters));
+    console.log(JSON.parse(this.environmentData.deviceId));
   }
 
 }
