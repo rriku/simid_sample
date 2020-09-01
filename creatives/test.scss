@@ -174,10 +174,10 @@ progress {
     -moz-appearance: none;
     -webkit-appearance: none;
     border: 0;
-    height: 10px;
+    height: 5px;
     width: 100%;
     color: #dcdc11;       /* IE */
-    background: #FFF; /* Firefox */
+    background: rgba(255,255,255,0.5); /* Firefox */
 }
 
 /* Chrome needs '-webkit-progress-value' and '-webkit-progress-bar' attributes. */
@@ -186,7 +186,7 @@ progress::-webkit-progress-value {
 }
 
 progress::-webkit-progress-bar {
-    background: #FFF;
+    background: rgba(255,255,255,0.5);
 }
 
 /* Firefox needs only '-moz-progress-bar' attiribute. */
