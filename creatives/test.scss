@@ -182,7 +182,7 @@ progress {
 
 /* Chrome needs '-webkit-progress-value' and '-webkit-progress-bar' attributes. */
 progress::-webkit-progress-value {
-    background: #FFF;
+    background: #dcdc11;
 }
 
 progress::-webkit-progress-bar {
@@ -191,5 +191,5 @@ progress::-webkit-progress-bar {
 
 /* Firefox needs only '-moz-progress-bar' attiribute. */
 progress::-moz-progress-bar {
-    background: #FFF;
+    background: #dcdc11;
 }
