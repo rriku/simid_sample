@@ -22,6 +22,12 @@ body {
   opacity: 1;
 }
 
+@media screen and (min-width: 480px) {
+  #simid_creative {
+    padding: 1.5vw;
+  }
+}
+
 .simid_creative_wrapper {
   min-height: 100px;
   min-width: 100px;

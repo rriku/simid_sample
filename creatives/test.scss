@@ -39,6 +39,9 @@ body{
     &.show{
         opacity: 1;
     }
+    @include break_pc(){
+        padding: 1.5vw;
+    }
 }
 .simid_creative_wrapper{
     min-height: 100px;
