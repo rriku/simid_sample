@@ -40,6 +40,11 @@ class SimidController extends BaseSimidCreative {
     this.simidProtocol.sendMessage(CreativeMessage.REQUEST_NAVIGATION, params );
   }
 
+  // フルスクリーン
+  fullscreen(){
+    this.simidProtocol.sendMessage(CreativeMessage.REQUEST_FULL_SCREEN);
+  }
+
   // プラポリオープン
   //getDeviceId(){
   //  console.log(this.creativeData.adParameters);
@@ -139,9 +144,15 @@ function main(){
 
         // プラポリ
         $("#button_privacy").click(function(){
-            simidController.privacy();
+          simidController.privacy();
           return false;
-      });
+        });
+
+        // フルスクリーン
+        $("#button_fullscreen").click(function(){
+          simidController.fullscreen();
+          return false;
+        });
 
         // チェックが付いた時の処理
         $("input[type=checkbox]").click(function(){
