@@ -90,9 +90,10 @@ body{
         opacity: 0.8;
         @include basic-transition();
         z-index: 9999;
-        /* @include break_pc(){
-            display: none;
-        } */
+        @include break_pc(){
+             //display: none;
+            bottom: 100px;
+        }
     }
 
     .options{
