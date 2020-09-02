@@ -44,7 +44,7 @@ class SimidController extends BaseSimidCreative {
   fullscreen(){
     console.log("fullscreenmode :" + this.environmentData.fullscreen);
     console.log("fullscreenAllowed :" + this.environmentData.fullscreenAllowed);
-    this.simidProtocol.sendMessage(CreativeMessage.REQUEST_FULL_SCREEN);
+    this.simidProtocol.sendMessage(CreativeMessage.aaaaa);
   }
 
   // プラポリオープン
