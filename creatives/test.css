@@ -175,7 +175,7 @@ input[type="checkbox"]:checked + label:before {
 
 .progressWrapper {
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 
