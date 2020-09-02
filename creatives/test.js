@@ -114,6 +114,9 @@ function main(){
 
       // console.log(simidController.creativeData.adParameters);
 
+      // デバッグ
+      document.getElementById("debug_area").textContent = document.URL;
+
       // タイマー開始
       $(function () {
         maxBar = $('#bar').attr('max');
