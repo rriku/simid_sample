@@ -28,6 +28,9 @@ class SimidController extends BaseSimidCreative {
   constructor() {
     // セッション開始
     super();
+
+    // ボタンアクションをバインド
+    this.addButtonClickActions_();
   }
 
   // アンケートスキップ
