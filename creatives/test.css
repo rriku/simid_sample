@@ -28,6 +28,10 @@ body {
   }
 }
 
+#simid_creative * {
+  word-break: break-all;
+}
+
 .simid_creative_wrapper {
   min-height: 100px;
   min-width: 100px;

@@ -42,6 +42,9 @@ body{
     @include break_pc(){
         padding: 1.5vw;
     }
+    *{
+        word-break: break-all;
+    }
 }
 .simid_creative_wrapper{
     min-height: 100px;
