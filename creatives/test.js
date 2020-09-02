@@ -73,9 +73,6 @@ class SimidController extends BaseSimidCreative {
 // SIMID制御クラス
 const simidController = new SimidController();
 
-// イニシャライズ
-simidController.onInit();
-
 // メイン処理開始
 main();
 
@@ -108,6 +105,9 @@ function main(){
 
       // SIMIDセッションスタート
       simidController.ready();
+
+      // イニシャライズ
+      simidController.onInit();
 
       console.log(getMediaState());
 
