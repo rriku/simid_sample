@@ -68,7 +68,7 @@ class SimidController extends BaseSimidCreative {
 
   /** @override */
   onInit(eventData) {
-    super.onStart(eventData);
+    super.onInit(eventData);
     console.log(JSON.parse(this.environmentData.fullscreenAllowed));
     /* if(this.environmentData.deviceId){
       deviceId = this.environmentData.deviceId
