@@ -71,7 +71,7 @@ body{
         @include break_smp(){
             top: auto;
             bottom: 13px;
-            right: 0;
+            right: 25px;
             left: auto;
             width: 20px;
         }
@@ -84,15 +84,15 @@ body{
         position: absolute;
         top: auto;
         bottom: 13px;
-        right: 25px;
+        right: 0;
         left: auto;
-        width: 15px;
+        width: 10px;
         opacity: 0.8;
         @include basic-transition();
         z-index: 9999;
         @include break_pc(){
-             //display: none;
-            bottom: 150px;
+            display: none;
+            // bottom: 150px;
         }
     }
 
