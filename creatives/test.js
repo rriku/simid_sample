@@ -164,6 +164,7 @@ function main(){
 
         // フルスクリーン
         $("#button_fullscreen").click(function(){
+          console.log("click_fullscreen");
           simidController.fullscreen();
           return false;
         });
