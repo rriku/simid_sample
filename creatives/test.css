@@ -83,12 +83,9 @@ body {
   transition: all 0.3s;
   -webkit-transition: all 0.3s;
   z-index: 9999;
-}
-
-@media screen and (min-width: 480px) {
-  .simid_creative_wrapper #button_fullscreen {
-    display: none;
-  }
+  /* @include break_pc(){
+            display: none;
+        } */
 }
 
 .simid_creative_wrapper .options ul {
