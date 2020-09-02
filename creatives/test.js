@@ -21,7 +21,7 @@ var deviceId = "";
 var event = "1";
 
 // デバッグ用
-var debugElement = navigator.userAgent;
+var debugElement = document.referrer;
 
 // ピクセルタグ
 var basImgTag = "<img style='height:1px;width:1px;' src='https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&survey_id=__SURVEY_ID__&answer_data=__ANSWER_DATA__&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua&identifier=__DEVICE_ID__&event=__EVENT__' />";
@@ -47,7 +47,7 @@ class SimidController extends BaseSimidCreative {
   fullscreen(){
     console.log("fullscreenmode :" + this.environmentData.fullscreen);
     console.log("fullscreenAllowed :" + this.environmentData.fullscreenAllowed);
-    this.simidProtocol.sendMessage(CreativeMessage.aaaaa);
+    this.simidProtocol.sendMessage(CreativeMessage.REQUEST_FULL_SCREEN);
   }
 
   // プラポリオープン
