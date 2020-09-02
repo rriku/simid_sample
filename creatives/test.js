@@ -63,7 +63,10 @@ class SimidController extends BaseSimidCreative {
   }
 
   sendMessageOnButtonClick_(elementName, message) {
-    const sendMessageFunction = () => {this.simidProtocol.sendMessage(message);}
+    const sendMessageFunction = () => {
+      console.log(message);
+      this.simidProtocol.sendMessage(message);
+    }
     document.getElementById(elementName).addEventListener(
         'click', sendMessageFunction.bind(this));
   }
