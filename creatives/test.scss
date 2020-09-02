@@ -64,15 +64,15 @@ body{
         left: 1.5vw;
         opacity: 0.8;
         @include basic-transition();
+        z-index: 99999;
         &:hover{
             opacity: 0.5;
         }
         @include break_smp(){
             top: auto;
-            right: 0;
-            bottom: 10px;
-            left: auto;
-            width: 30px;
+            bottom: 13px;
+            left: 0;
+            width: 15px;
         }
     }
     .options{

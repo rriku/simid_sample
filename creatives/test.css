@@ -52,6 +52,7 @@ body {
   opacity: 0.8;
   transition: all 0.3s;
   -webkit-transition: all 0.3s;
+  z-index: 99999;
 }
 
 .simid_creative_wrapper #button_privacy:hover {
@@ -61,10 +62,9 @@ body {
 @media screen and (max-width: 480px) {
   .simid_creative_wrapper #button_privacy {
     top: auto;
-    right: 0;
-    bottom: 10px;
-    left: auto;
-    width: 30px;
+    bottom: 13px;
+    left: 0;
+    width: 15px;
   }
 }
 
