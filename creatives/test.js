@@ -54,12 +54,12 @@ class SimidController extends BaseSimidCreative {
    * Adds actions to different buttons available on the overlay.
    */
   addButtonClickActions_() {
-    this.sendMessageOnButtonClick_('request_play', CreativeMessage.REQUEST_PLAY);
-    this.sendMessageOnButtonClick_('request_pause', CreativeMessage.REQUEST_PAUSE);
+    // this.sendMessageOnButtonClick_('request_play', CreativeMessage.REQUEST_PLAY);
+    // this.sendMessageOnButtonClick_('request_pause', CreativeMessage.REQUEST_PAUSE);
     this.sendMessageOnButtonClick_('button_fullscreen', CreativeMessage.REQUEST_FULL_SCREEN);
-    this.sendMessageOnButtonClick_('fatal_error', CreativeMessage.FATAL_ERROR);
-    this.sendMessageOnButtonClick_('request_skip', CreativeMessage.REQUEST_SKIP);
-    this.sendMessageOnButtonClick_('request_stop', CreativeMessage.REQUEST_STOP);
+    // this.sendMessageOnButtonClick_('fatal_error', CreativeMessage.FATAL_ERROR);
+    // this.sendMessageOnButtonClick_('request_skip', CreativeMessage.REQUEST_SKIP);
+    // this.sendMessageOnButtonClick_('request_stop', CreativeMessage.REQUEST_STOP);
   }
 
   sendMessageOnButtonClick_(elementName, message) {
