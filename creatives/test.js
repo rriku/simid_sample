@@ -42,13 +42,8 @@ class SimidController extends BaseSimidCreative {
 
   // フルスクリーン
   fullscreen(){
-    console.log();
+    console.log("fullscreenmode");
     this.simidProtocol.sendMessage(CreativeMessage.REQUEST_FULL_SCREEN);
-  }
-
-  // メディア情報取得
-  getMediaState(){
-    this.simidProtocol.sendMessage(CreativeMessage.GET_MEDIA_STATE);
   }
 
   // プラポリオープン
@@ -115,10 +110,6 @@ function main(){
       // SIMIDセッションスタート
       simidController.ready();
 
-      // イニシャライズ
-      // simidController.onInit();
-
-      console.log(getMediaState());
 
 
       // console.log(simidController.creativeData.adParameters);
