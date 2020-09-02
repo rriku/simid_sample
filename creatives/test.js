@@ -28,47 +28,23 @@ class SimidController extends BaseSimidCreative {
   constructor() {
     // セッション開始
     super();
-
-    // ボタンアクションをバインド
-    this.addButtonClickActions_();
   }
 
   // アンケートスキップ
-  /* skip(){
+  skip(){
     this.simidProtocol.sendMessage(CreativeMessage.REQUEST_SKIP);
-  } */
+  }
   
   // プラポリオープン
-  /* privacy(){
+  privacy(){
     this.simidProtocol.sendMessage(CreativeMessage.REQUEST_NAVIGATION, params );
-  } */
+  }
 
   // フルスクリーン
-  /* fullscreen(){
+  fullscreen(){
     console.log("fullscreenmode :" + this.environmentData.fullscreen);
     console.log("fullscreenAllowed :" + this.environmentData.fullscreenAllowed);
     this.simidProtocol.sendMessage(CreativeMessage.aaaaa);
-  } */
-
-  /**
-   * Adds actions to different buttons available on the overlay.
-   */
-  addButtonClickActions_() {
-    // this.sendMessageOnButtonClick_('request_play', CreativeMessage.REQUEST_PLAY);
-    // this.sendMessageOnButtonClick_('request_pause', CreativeMessage.REQUEST_PAUSE);
-    this.sendMessageOnButtonClick_('debug_area', CreativeMessage.REQUEST_FULL_SCREEN);
-    // this.sendMessageOnButtonClick_('fatal_error', CreativeMessage.FATAL_ERROR);
-    // this.sendMessageOnButtonClick_('request_skip', CreativeMessage.REQUEST_SKIP);
-    // this.sendMessageOnButtonClick_('request_stop', CreativeMessage.REQUEST_STOP);
-  }
-
-  sendMessageOnButtonClick_(elementName, message) {
-    const sendMessageFunction = () => {
-      console.log(message);
-      this.simidProtocol.sendMessage(message);
-    }
-    document.getElementById(elementName).addEventListener(
-        'click', sendMessageFunction.bind(this));
   }
 
   // プラポリオープン
@@ -182,16 +158,16 @@ function main(){
         });
 
         // プラポリ
-        /* $("#button_privacy").click(function(){
+        $("#button_privacy").click(function(){
           simidController.privacy();
           return false;
-        }); */
+        });
 
         // フルスクリーン
-        /* $("#button_fullscreen").click(function(){
+        $("#button_fullscreen").click(function(){
           simidController.fullscreen();
           return false;
-        }); */
+        });
 
         // チェックが付いた時の処理
         $("input[type=checkbox]").click(function(){
@@ -279,5 +255,3 @@ function postPixel(){
   $("#simid_creative").html(basImgTag);
   console.log(basImgTag);
 }
-
-
