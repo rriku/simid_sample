@@ -66,6 +66,15 @@ class SimidController extends BaseSimidCreative {
     }
   }
 
+  /** @override */
+  onInit(eventData) {
+    super.onStart(eventData);
+    console.log(JSON.parse(this.environmentData.fullscreenAllowed));
+    /* if(this.environmentData.deviceId){
+      deviceId = this.environmentData.deviceId
+    } */
+  }
+
 }
 
 
@@ -107,7 +116,7 @@ function main(){
       simidController.ready();
 
       // イニシャライズ
-      simidController.onInit();
+      // simidController.onInit();
 
       console.log(getMediaState());
 
