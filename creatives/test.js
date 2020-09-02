@@ -42,7 +42,6 @@ class SimidController extends BaseSimidCreative {
 
   // フルスクリーン
   fullscreen(){
-    alert("full");
     this.simidProtocol.sendMessage(CreativeMessage.REQUEST_FULL_SCREEN);
   }
 

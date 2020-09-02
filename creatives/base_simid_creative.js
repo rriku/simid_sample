@@ -81,7 +81,7 @@ class BaseSimidCreative {
       muted: this.environmentData.muted,
       paused: false,
       volume: this.environmentData.volume,
-      fullscreen: false //TODO add this to environment data in spec
+      fullscreen: true //TODO add this to environment data in spec
     }
     this.simidProtocol.resolve(eventData, {});
   }
