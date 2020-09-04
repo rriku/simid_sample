@@ -94,7 +94,7 @@ body{
         @include basic-transition();
         z-index: 9999;
         @include break_pc(){
-            // display: none;
+            display: none;
             // bottom: 150px;
         }
     }
