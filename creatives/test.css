@@ -138,7 +138,7 @@ body {
 
 .simid_creative_wrapper .options ul li label {
   cursor: pointer;
-  display: block;
+  /* display: block; */
   /* float: right;
                     width: 95%; */
   line-height: 150%;
