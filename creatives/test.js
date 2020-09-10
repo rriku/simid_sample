@@ -21,8 +21,8 @@ var deviceId = "";
 var event = "1";
 
 // デバッグ用
-// var debugElement = document.referrer;
-var debugElement = navigator.userAgent;
+var debugElement = document.referrer;
+// var debugElement = navigator.userAgent;
 
 // app or Pc
 var deviceType = "";
