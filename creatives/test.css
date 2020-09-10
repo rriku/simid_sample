@@ -149,7 +149,7 @@ body {
 }
 
 .simid_creative_wrapper .options ul li#button_submit span {
-  padding-left: 0;
+  padding-left: 0 !important;
 }
 
 /*Checkboxes styles*/
