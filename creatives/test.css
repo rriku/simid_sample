@@ -159,6 +159,7 @@ input[type="checkbox"] + label {
   display: table-cell;
   height: 25vh;
   vertical-align: middle;
+  width: 50vw;
   padding-left: 35px !important;
   margin-bottom: 20px;
   font-family: 'Open Sans', Arial, sans-serif;
