@@ -156,7 +156,9 @@ input[type="checkbox"] {
 
 input[type="checkbox"] + label {
   display: block;
-  padding: 2vw 0;
+  display: table-cell;
+  height: 25vh;
+  vertical-align: middle;
   padding-left: 35px !important;
   margin-bottom: 20px;
   font-family: 'Open Sans', Arial, sans-serif;
@@ -164,12 +166,6 @@ input[type="checkbox"] + label {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-}
-
-@media screen and (max-width: 480px) {
-  input[type="checkbox"] + label {
-    padding: 1vw 0;
-  }
 }
 
 input[type="checkbox"] + label:last-child {

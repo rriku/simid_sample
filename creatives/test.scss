@@ -151,9 +151,12 @@ input[type="checkbox"] { display: none; }
 input[type="checkbox"] + label {
   display: block;
   // position: relative;
-  padding:2vw 0;
+  // padding:2vw 0;
+  display: table-cell;
+  height: 25vh;
+  vertical-align: middle;
   @include break_smp(){
-      padding:1vw 0;
+      // padding:1vw 0;
   }
   padding-left: 35px!important;
   margin-bottom: 20px;
