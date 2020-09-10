@@ -32,7 +32,7 @@
             <AdParameters>12345678</AdParameters>
             <MediaFiles>
               <MediaFile delivery="progressive" type="video/mp4">https://rriku.github.io/simid_sample/creatives/black.mp4</MediaFile>
-              <InteractiveCreativeFile type="text/html" apiFramework="SIMID" variableDuration="true">https://rriku.github.io/simid_sample/creatives/test.html</InteractiveCreativeFile>
+              <InteractiveCreativeFile type="text/html" apiFramework="SIMID" variableDuration="true">https://interactiveadvertisingbureau.github.io/SIMID/examples/creatives/simid_overlay.html</InteractiveCreativeFile>
             </MediaFiles>
           </Linear>
         </Creative>
