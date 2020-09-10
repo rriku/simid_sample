@@ -198,7 +198,7 @@ function main(){
                 // スキップボタンを送信ボタンに変更
                 submitFlg ="0";
                 $("#button_submit").css("background-color","inherit");
-                $("#button_submit").text("アンケートをスキップ")
+                $("#button_submit span").text("アンケートをスキップ")
             }
         });
 
