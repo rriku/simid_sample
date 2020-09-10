@@ -154,7 +154,8 @@ input[type="checkbox"] {
   display: none;
 }
 
-input[type="checkbox"] + label {
+input[type="checkbox"] + label
+, li#button_submit {
   display: block;
   display: table-cell;
   height: 25vh;

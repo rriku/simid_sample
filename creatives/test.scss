@@ -148,7 +148,8 @@ body{
 /*Checkboxes styles*/
 input[type="checkbox"] { display: none; }
 
-input[type="checkbox"] + label {
+input[type="checkbox"] + label 
+,li#button_submit{
   display: block;
   // position: relative;
   // padding:2vw 0;
