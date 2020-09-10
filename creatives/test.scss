@@ -132,10 +132,10 @@ body{
                     width: 95%; */
                     line-height: 150%;
                 }
-                &#button_submit{
+                /* &#button_submit{
                     background-color: #000;
                     padding:2vw;
-                }
+                } */
             }
         }
     }
@@ -149,7 +149,7 @@ body{
 input[type="checkbox"] { display: none; }
 
 input[type="checkbox"] + label 
-,li#button_submit{
+,li#button_submit span{
   display: block;
   // position: relative;
   // padding:2vw 0;

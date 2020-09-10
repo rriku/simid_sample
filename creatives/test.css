@@ -116,6 +116,10 @@ body {
   margin-right: 2%;
   margin-bottom: 15px;
   position: relative;
+  /* &#button_submit{
+                    background-color: #000;
+                    padding:2vw;
+                } */
 }
 
 @media screen and (max-width: 480px) {
@@ -144,18 +148,13 @@ body {
   line-height: 150%;
 }
 
-.simid_creative_wrapper .options ul li#button_submit {
-  background-color: #000;
-  padding: 2vw;
-}
-
 /*Checkboxes styles*/
 input[type="checkbox"] {
   display: none;
 }
 
 input[type="checkbox"] + label
-, li#button_submit {
+, li#button_submit span {
   display: block;
   display: table-cell;
   height: 25vh;
