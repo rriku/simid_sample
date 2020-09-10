@@ -189,7 +189,7 @@ function main(){
                 // スキップボタンを送信ボタンに変更
                 submitFlg ="1";
                 $("#button_submit").css("background-color","#a92f61");
-                $("#button_submit").text("アンケートを送信する")
+                $("#button_submit span").text("アンケートを送信する")
 
             }else{
                 $not.attr("disabled",false);
