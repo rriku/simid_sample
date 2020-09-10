@@ -148,6 +148,10 @@ body {
   background-color: #000;
 }
 
+.simid_creative_wrapper .options ul li#button_submit span {
+  padding-left: 0;
+}
+
 /*Checkboxes styles*/
 input[type="checkbox"] {
   display: none;

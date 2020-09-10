@@ -134,6 +134,9 @@ body{
                 }
                 &#button_submit{
                     background-color: #000;
+                    span{
+                        padding-left: 0;
+                    }
                     // padding:2vw;
                 }
             }
