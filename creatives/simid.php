@@ -1,0 +1,42 @@
+<VAST xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vast.xsd" version="3.0">
+  <Ad id="1234567">
+    <InLine>
+      <AdSystem>GDFP</AdSystem>
+      <AdTitle>Linear SIMID Example_clickable</AdTitle>
+      <Description>SIMID Linear Video Ad</Description>
+      <Error>https://www.example.com/error</Error>
+      <Impression>https://www.example.com/impression</Impression>
+      <Creatives>
+        <Creative sequence="1">
+          <Linear>
+            <Duration>00:01:00</Duration>
+            <TrackingEvents>
+              <Tracking event="start">https://www.example.com/start</Tracking>
+              <Tracking event="firstQuartile">https://www.example.com/firstQuartile</Tracking>
+              <Tracking event="midpoint">https://www.example.com/midpoint</Tracking>
+              <Tracking event="thirdQuartile">https://www.example.com/thirdQuartile</Tracking>
+              <Tracking event="complete">https://www.example.com/complete</Tracking>
+              <Tracking event="mute">https://www.example.com/mute</Tracking>
+              <Tracking event="unmute">https://www.example.com/unmute</Tracking>
+              <Tracking event="rewind">https://www.example.com/rewind</Tracking>
+              <Tracking event="pause">https://www.example.com/pause</Tracking>
+              <Tracking event="resume">https://www.example.com/resume</Tracking>
+              <Tracking event="fullscreen">https://www.example.com/fullscreen</Tracking>
+              <Tracking event="creativeView">https://www.example.com/creativeView</Tracking>
+              <Tracking event="acceptInvitation">https://www.example.com/acceptInvitation</Tracking>
+            </TrackingEvents>
+            <VideoClicks>
+              <ClickThrough id="123">https://google.com</ClickThrough>
+              <ClickTracking id="123">https://www.example.com/click</ClickTracking>
+            </VideoClicks>
+            <AdParameters>12345678</AdParameters>
+            <MediaFiles>
+              <MediaFile delivery="progressive" type="video/mp4">https://rriku.github.io/simid_sample/creatives/black.mp4</MediaFile>
+              <InteractiveCreativeFile type="text/html" apiFramework="SIMID" variableDuration="true">https://rriku.github.io/simid_sample/creatives/test.html</InteractiveCreativeFile>
+            </MediaFiles>
+          </Linear>
+        </Creative>
+      </Creatives>
+    </InLine>
+  </Ad>
+</VAST>
