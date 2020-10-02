@@ -234,7 +234,7 @@ function countdown(){
     // resetTimer();
     event = "4"; // タイムアウト
     postPixel();
-    simidController.skip();
+    // simidController.skip();
   }
 }
 

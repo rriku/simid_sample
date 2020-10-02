@@ -1,3 +1,9 @@
+#set ($surveyid = $input.params('surveyid').replace('<', '').replace('>', ''))
+#set ($vid = $input.params('vid').replace('<', '').replace('>', ''))
+#set ($identifer = $input.params('identifer').replace('<', '').replace('>', ''))
+#set ($vpos = $input.params('vpos').replace('<', '').replace('>', ''))
+#set ($platform = $input.params('platform').replace('<', '').replace('>', ''))
+
 <VAST xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vast.xsd" version="3.0">
   <Ad id="1234567">
     <InLine>
@@ -8,7 +14,15 @@
         <Creative sequence="1">
           <Linear>
             <Duration>00:01:00</Duration>
-            <AdParameters>12345678</AdParameters>
+            <AdParameters>
+              {
+                "surveyid":"${surveyid}",
+                "vid":"${vid}",
+                "identifer":"${identifer}",
+                "vpos":"${vpos}",
+                "platform":"${platform}",
+              }
+            </AdParameters>
             <MediaFiles>
               <MediaFile delivery="progressive" type="video/mp4">https://rriku.github.io/simid_sample/creatives/black.mp4</MediaFile>
               <InteractiveCreativeFile type="text/html" apiFramework="SIMID" variableDuration="true">https://rriku.github.io/simid_sample/creatives/test.html</InteractiveCreativeFile>
