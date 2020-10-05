@@ -15,7 +15,7 @@ var answer_data = [];
 var event = "1";
 
 // デバッグ用
-var debugElement = document.referrer;
+var debugElement = dnavigator.userAgent;
 // var debugElement = navigator.userAgent;
 
 // app or Pc
