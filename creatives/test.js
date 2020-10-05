@@ -8,14 +8,8 @@ var timestamp = new Date().getTime();
 // 送信可能フラグ
 var submitFlg;
 
-// アンケートID（広告ID）
-var suerveyId = "123456";
-
 // 回答
 var answer_data = [];
-
-// 広告識別子
-var deviceId = "";
 
 // イベント
 var event = "1";
@@ -31,7 +25,7 @@ var deviceType = "";
 var adParameters = "";
 
 // ピクセルタグ
-var basImgTag = "<img style='height:1px;width:1px;' src='https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&survey_id=__SURVEY_ID__&answer_data=__ANSWER_DATA__&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua&identifier=__DEVICE_ID__&event=__EVENT__&device=__DEVICE__' />";
+var basImgTag = "<img style='height:1px;width:1px;' src='https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&survey_id=__SURVEY_ID__&answer_data=__ANSWER_DATA__&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua&identifier=__DEVICE_ID__&event=__EVENT__&device=__DEVICE__&vpos=__VPOS__&platform=__PLATFORM__' />";
 
 class SimidController extends BaseSimidCreative {
   // コンストラクタ
@@ -58,30 +52,12 @@ class SimidController extends BaseSimidCreative {
     this.simidProtocol.sendMessage(CreativeMessage.REQUEST_FULL_SCREEN);
   }
 
-  // プラポリオープン
-  //getDeviceId(){
-  //  console.log(this.creativeData.adParameters);
-  //  return this.environmentData.deviceId;
-  // }
-
   /*@override*/
   onStart(eventData) {
     super.onStart(eventData);
     adParameters = JSON.parse(this.creativeData.adParameters);
     console.log(adParameters);
-    if(this.environmentData.deviceId){
-      deviceId = this.environmentData.deviceId
-    }
   }
-
-  /*@override*/
-  /* onInit(eventData) {
-    super.onInit(eventData);
-    console.log(JSON.parse(this.environmentData.fullscreenAllowed));
-    if(this.environmentData.deviceId){
-      deviceId = this.environmentData.deviceId
-    }
-  } */
 
 }
 
@@ -261,8 +237,10 @@ function postPixel(){
   // デバイス種別取得
   deviceType = getAppOrWeb();
 
-  basImgTag = basImgTag.replace("__SURVEY_ID__",suerveyId);
-  basImgTag = basImgTag.replace("__DEVICE_ID__",deviceId);
+  basImgTag = basImgTag.replace("__SURVEY_ID__",adParameters.suerveyId);
+  basImgTag = basImgTag.replace("__DEVICE_ID__",adParameters.identifer);
+  basImgTag = basImgTag.replace("__PLATFORM__",adParameters.platform);
+  basImgTag = basImgTag.replace("__VPOS__",adParameters.vpos);
   basImgTag = basImgTag.replace("__EVENT__",event);
   basImgTag = basImgTag.replace("__DEVICE__",deviceType);
   basImgTag = basImgTag.replace("__ANSWER_DATA__",JSON.stringify(answer_data));
