@@ -36,7 +36,12 @@ class SimidController extends BaseSimidCreative {
 
   // アンケートスキップ
   skip(){
-    this.simidProtocol.sendMessage(CreativeMessage.REQUEST_SKIP);
+    // デバッグ
+    document.getElementById("debug_area").textContent = debugElement;
+
+    setTimeout(function(){this.simidProtocol.sendMessage(CreativeMessage.REQUEST_SKIP)},1000);
+
+    // this.simidProtocol.sendMessage(CreativeMessage.REQUEST_SKIP);
     console.log("skip");
   }
   
@@ -103,9 +108,6 @@ function main(){
 
       // console.log(simidController.creativeData.adParameters);
 
-      // デバッグ
-      document.getElementById("debug_area").textContent = debugElement;
-
       // タイマー開始
       $(function () {
         maxBar = $('#bar').attr('max');
@@ -138,15 +140,9 @@ function main(){
               event = "3"; //スキップ
 
               // ピクセルタグを送信
-              // postPixel()
+              postPixel()
 
-              // 
-              var result = new Promise(function(resolve) {
-                resolve(postPixel());
-              })
-              result.then( function(){ 
-                simidController.skip();
-              });
+              simidController.skip();
             }
             return false;
         });
@@ -241,8 +237,7 @@ $('input:checked').each(function() {
 // ピクセルタグ置換
 function postPixel(){
   // デバイス種別取得
-  // deviceType = getAppOrWeb();
-  var resultPixel = "";
+  deviceType = getAppOrWeb();
 
   basImgTag = basImgTag.replace("__SURVEY_ID__",adParameters.surveyid);
   basImgTag = basImgTag.replace("__DEVICE_ID__",adParameters.identifer);
@@ -256,14 +251,12 @@ function postPixel(){
   // 送信
   $("#simid_creative").html(basImgTag);
   console.log(basImgTag);
-  resultPixel = basImgTag;
-
-  return resultPixel;
+  debugElement = basImgTag;
 }
 
 
 function getAppOrWeb(){
-  if (navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('Mobile') > 0 || navigator.userAgent.indexOf('iPad') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+  if (navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('Mobile') > 0 || navigator.userAgent.indexOf('iPad') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('Mobile') > 0) {
     return "1";
   } else {
     return "2";
