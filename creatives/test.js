@@ -235,7 +235,7 @@ $('input:checked').each(function() {
 // ピクセルタグ置換
 function postPixel(){
   // デバイス種別取得
-  deviceType = getAppOrWeb();
+  // deviceType = getAppOrWeb();
 
   basImgTag = basImgTag.replace("__SURVEY_ID__",adParameters.surveyid);
   basImgTag = basImgTag.replace("__DEVICE_ID__",adParameters.identifer);
