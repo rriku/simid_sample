@@ -36,8 +36,6 @@ class SimidController extends BaseSimidCreative {
 
   // アンケートスキップ
   skip(){
-    // デバッグ
-    document.getElementById("debug_area").textContent = debugElement;
 
     setTimeout(function(){this.simidProtocol.sendMessage(CreativeMessage.REQUEST_SKIP)},1000);
 
@@ -131,6 +129,9 @@ function main(){
               
               // ピクセルタグを送信
               postPixel()
+              
+              // デバッグ
+              document.getElementById("debug_area").textContent = debugElement;
 
               // 送信完了したら残りの広告はスキップ
               simidController.skip();
@@ -141,6 +142,9 @@ function main(){
 
               // ピクセルタグを送信
               postPixel()
+
+              // デバッグ
+              document.getElementById("debug_area").textContent = debugElement;
 
               simidController.skip();
             }
