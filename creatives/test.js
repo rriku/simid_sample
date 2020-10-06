@@ -138,9 +138,15 @@ function main(){
               event = "3"; //スキップ
 
               // ピクセルタグを送信
-              postPixel()
+              // postPixel()
 
-              simidController.skip();
+              // 
+              var result = new Promise(function(resolve) {
+                resolve(postPixel());
+              })
+              result.then( function(){ 
+                simidController.skip();
+              });
             }
             return false;
         });
@@ -236,6 +242,7 @@ $('input:checked').each(function() {
 function postPixel(){
   // デバイス種別取得
   // deviceType = getAppOrWeb();
+  var resultPixel = "";
 
   basImgTag = basImgTag.replace("__SURVEY_ID__",adParameters.surveyid);
   basImgTag = basImgTag.replace("__DEVICE_ID__",adParameters.identifer);
@@ -249,6 +256,9 @@ function postPixel(){
   // 送信
   $("#simid_creative").html(basImgTag);
   console.log(basImgTag);
+  resultPixel = basImgTag;
+
+  return resultPixel;
 }
 
 
