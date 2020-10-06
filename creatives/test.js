@@ -37,7 +37,9 @@ class SimidController extends BaseSimidCreative {
   // アンケートスキップ
   skip(){
 
-    setTimeout(function(){this.simidProtocol.sendMessage(CreativeMessage.REQUEST_SKIP)},1000);
+    setTimeout(function(){
+      this.simidProtocol.sendMessage(CreativeMessage.REQUEST_SKIP)
+    },1000);
 
     // this.simidProtocol.sendMessage(CreativeMessage.REQUEST_SKIP);
     console.log("skip");
@@ -250,6 +252,7 @@ function postPixel(){
   // $("#simid_creative").html(basImgTag);
   // $(debugElement).html(basImgTag)
   document.getElementById("debug_area").innerHTML = basImgTag;
+  document.getElementById("debug_area").innerText = basImgTag;
   // $("#simid_creative").html(basImgTag);
 }
 
