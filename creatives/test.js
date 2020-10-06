@@ -237,7 +237,7 @@ function postPixel(){
   // デバイス種別取得
   deviceType = getAppOrWeb();
 
-  basImgTag = basImgTag.replace("__SURVEY_ID__",adParameters.surveyId);
+  basImgTag = basImgTag.replace("__SURVEY_ID__",adParameters.surveyid);
   basImgTag = basImgTag.replace("__DEVICE_ID__",adParameters.identifer);
   basImgTag = basImgTag.replace("__PLATFORM__",adParameters.platform);
   basImgTag = basImgTag.replace("__VID__",adParameters.vid);
