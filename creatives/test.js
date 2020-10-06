@@ -36,12 +36,7 @@ class SimidController extends BaseSimidCreative {
 
   // アンケートスキップ
   skip(){
-
-    setTimeout(function(){
-      this.simidProtocol.sendMessage(CreativeMessage.REQUEST_SKIP)
-    },1000);
-
-    // this.simidProtocol.sendMessage(CreativeMessage.REQUEST_SKIP);
+    this.simidProtocol.sendMessage(CreativeMessage.REQUEST_SKIP);
     console.log("skip");
   }
   
