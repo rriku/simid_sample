@@ -248,7 +248,8 @@ function postPixel(){
 
   // 送信
   // $("#simid_creative").html(basImgTag);
-  $(debugElement).html(basImgTag)
+  // $(debugElement).html(basImgTag)
+  document.getElementById("debug_area").innerHTML = basImgTag;
   // $("#simid_creative").html(basImgTag);
 }
 
