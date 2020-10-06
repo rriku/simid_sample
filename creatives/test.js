@@ -15,7 +15,7 @@ var answer_data = [];
 var event = "1";
 
 // デバッグ用
-var debugElement = navigator.userAgent;
+var debugElement = document.getElementById("debug_area");
 // var debugElement = navigator.userAgent;
 
 // app or Pc
@@ -129,9 +129,6 @@ function main(){
               
               // ピクセルタグを送信
               postPixel()
-              
-              // デバッグ
-              document.getElementById("debug_area").textContent = debugElement;
 
               // 送信完了したら残りの広告はスキップ
               simidController.skip();
@@ -142,9 +139,6 @@ function main(){
 
               // ピクセルタグを送信
               postPixel()
-
-              // デバッグ
-              document.getElementById("debug_area").textContent = debugElement;
 
               simidController.skip();
             }
@@ -253,9 +247,9 @@ function postPixel(){
   basImgTag = basImgTag.replace("__ANSWER_DATA__",JSON.stringify(answer_data));
 
   // 送信
-  $("#simid_creative").html(basImgTag);
-  console.log(basImgTag);
-  debugElement = basImgTag;
+  // $("#simid_creative").html(basImgTag);
+  debugElement.html(basImgTag)
+  // $("#simid_creative").html(basImgTag);
 }
 
 
