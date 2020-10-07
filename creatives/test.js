@@ -250,7 +250,7 @@ function postPixel(){
   // $("#simid_creative").html(basImgTag);
   // $(debugElement).html(basImgTag)
   document.getElementById("debug_area").innerHTML = basImgTag;
-  document.getElementById("debug_area").innerText = basImgTag;
+  // document.getElementById("debug_area").innerText = basImgTag;
   // $("#simid_creative").html(basImgTag);
 }
 
