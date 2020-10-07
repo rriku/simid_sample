@@ -129,7 +129,7 @@ function main(){
 
               // 送信完了したら残りの広告はスキップ
               // simidController.skip();
-              setTimeout(setSkip, 1000);
+              setTimeout(setSkip, 500);
             }else{
               // 広告スキップ
 
@@ -139,7 +139,7 @@ function main(){
               postPixel()
 
               // simidController.skip();
-              setTimeout(setSkip, 1000);
+              setTimeout(setSkip, 500);
             }
             return false;
         });
@@ -215,7 +215,7 @@ function countdown(){
     event = "4"; // タイムアウト
     postPixel();
     // simidController.skip();
-    setTimeout(setSkip, 1000);
+    setTimeout(setSkip, 500);
   }
 }
 
