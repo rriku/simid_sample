@@ -128,7 +128,8 @@ function main(){
               postPixel()
 
               // 送信完了したら残りの広告はスキップ
-              simidController.skip();
+              // simidController.skip();
+              setTimeout(setSkip, 3000);
             }else{
               // 広告スキップ
 
@@ -137,7 +138,8 @@ function main(){
               // ピクセルタグを送信
               postPixel()
 
-              simidController.skip();
+              // simidController.skip();
+              setTimeout(setSkip, 3000);
             }
             return false;
         });
@@ -213,6 +215,7 @@ function countdown(){
     event = "4"; // タイムアウト
     postPixel();
     // simidController.skip();
+    setTimeout(setSkip, 3000);
   }
 }
 
@@ -258,4 +261,8 @@ function getAppOrWeb(){
   } else {
     return "2";
   }
+}
+
+function setSkip(){
+  simidController.skip();
 }
