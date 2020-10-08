@@ -63,8 +63,8 @@ body{
         cursor: pointer;
         width: 30px;
         position: absolute;
-        bottom: 30px;
-        left: 1.5vw;
+        top: 30px;
+        right: 1.5vw;
         opacity: 0.8;
         @include basic-transition();
         z-index: 9999;
@@ -73,7 +73,7 @@ body{
         }
         @include break_smp(){
             top: auto;
-            bottom: 13px;
+            top: 13px;
             right: 25px;
             left: auto;
             width: 20px;
