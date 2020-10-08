@@ -93,6 +93,7 @@ body{
         opacity: 0.8;
         @include basic-transition();
         z-index: 9999;
+        display: none;
         @include break_pc(){
             display: none;
             // bottom: 150px;
