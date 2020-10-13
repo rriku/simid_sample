@@ -1,4 +1,4 @@
-/// mix in ///
+/// mix in /// 
 @mixin basic-transition($sec:0.3){
     transition:all #{$sec}s;
     -webkit-transition:all #{$sec}s;

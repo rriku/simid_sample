@@ -80,7 +80,7 @@ function main(){
       answer_list:[]
     },
     created: function () {
-      axios.get('./test.json?timestamp=' + timestamp).then(function (response) {
+      axios.get('./json/question.json?timestamp=' + timestamp).then(function (response) {
       // 取得完了したらlistリストに代入
       this.all_data = response.data;
       /* for(var i=0;i<this.all_data.length;i++){
