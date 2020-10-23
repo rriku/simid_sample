@@ -214,7 +214,7 @@ function countdown(){
     // resetTimer();
     event = "4"; // タイムアウト
     postPixel();
-    // setTimeout(setSkip, 500);
+    setTimeout(setSkip, 500);
   }
 }
 
