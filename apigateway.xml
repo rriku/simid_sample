@@ -34,6 +34,25 @@
           </Linear>
           <UniversalAdId idRegistry="Ad-ID">8465</UniversalAdId>
         </Creative>
+        <Creative id="5482" sequence="2" adId="2447228">
+          <Linear>
+            <Duration>00:01:00</Duration>
+            <AdParameters>
+              {
+                "surveyid":"${surveyid}",
+                "vid":"${vid}",
+                "identifer":"${identifer}",
+                "vpos":"${vpos}",
+                "platform":"${platform}"
+              }
+            </AdParameters>
+            <MediaFiles>
+              <MediaFile delivery="progressive" type="video/mp4" width="640" height="360" >https://txcom-ad.s3-ap-northeast-1.amazonaws.com/simid/mp4/black.mp4</MediaFile>
+              <InteractiveCreativeFile type="text/html" apiFramework="SIMID" variableDuration="true">https://rriku.github.io/simid_sample/creatives/index.html</InteractiveCreativeFile>
+            </MediaFiles>
+          </Linear>
+          <UniversalAdId idRegistry="Ad-ID">8465</UniversalAdId>
+        </Creative>
       </Creatives>
     </InLine>
   </Ad>
