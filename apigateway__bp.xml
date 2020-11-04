@@ -1,8 +1,3 @@
-#set ($surveyid = $input.params('surveyid').replace('<', '').replace('>', ''))
-#set ($vid = $input.params('vid').replace('<', '').replace('>', ''))
-#set ($identifer = $input.params('identifer').replace('<', '').replace('>', ''))
-#set ($vpos = $input.params('vpos').replace('<', '').replace('>', ''))
-#set ($platform = $input.params('platform').replace('<', '').replace('>', ''))
 <VAST xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vast.xsd" version="3.0">
   <Ad id="1234567">
     <InLine>
