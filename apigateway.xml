@@ -4,20 +4,20 @@
 #set ($vpos = $input.params('vpos').replace('<', '').replace('>', ''))
 #set ($platform = $input.params('platform').replace('<', '').replace('>', ''))
 <VAST version="4.2" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.iab.com/VAST">
-  <Ad id="20001" >
+  <Ad id="12345678" >
     <InLine>
-      <AdSystem version="1">iabtechlab</AdSystem>
-      <Error><![CDATA[https://example.com/error]]></Error>
-      <Impression id="Impression-ID"><![CDATA[https://example.com/track/impression]]></Impression>
+      <AdSystem>iabtechlab</AdSystem>
+      <Error>https://example.com/error</Error>
+      <Impression id="Impression-ID">https://rriku.github.io/simid_sample/creatives/img/info.png</Impression>
       <AdServingId>a532d16d-4d7f-4440-bd29-2ec05553fc80</AdServingId>
       <AdTitle>SIMID survey_clickable</AdTitle>
       <AdVerifications></AdVerifications>
-      <Advertiser>IAB Sample Company</Advertiser>
+      <Advertiser></Advertiser>
       <Category authority="https://www.iabtechlab.com/categoryauthority">AD CONTENT description category</Category>
       <Creatives>
-        <Creative id="5480" sequence="1" adId="2447226">
+        <Creative id="5480" sequence="1" adId="12345678">
           <Linear>
-            <Duration>00:01:00</Duration>
+            <Duration>00:00:60</Duration>
             <AdParameters>
               {
                 "surveyid":"${surveyid}",
@@ -28,26 +28,7 @@
               }
             </AdParameters>
             <MediaFiles>
-              <MediaFile delivery="progressive" type="video/mp4" width="640" height="360" >https://txcom-ad.s3-ap-northeast-1.amazonaws.com/simid/mp4/black.mp4</MediaFile>
-              <InteractiveCreativeFile type="text/html" apiFramework="SIMID" variableDuration="true">https://rriku.github.io/simid_sample/creatives/index.html</InteractiveCreativeFile>
-            </MediaFiles>
-          </Linear>
-          <UniversalAdId idRegistry="Ad-ID">8465</UniversalAdId>
-        </Creative>
-        <Creative id="5482" sequence="2" adId="2447228">
-          <Linear>
-            <Duration>00:01:00</Duration>
-            <AdParameters>
-              {
-                "surveyid":"${surveyid}",
-                "vid":"${vid}",
-                "identifer":"${identifer}",
-                "vpos":"${vpos}",
-                "platform":"${platform}"
-              }
-            </AdParameters>
-            <MediaFiles>
-              <MediaFile delivery="progressive" type="video/mp4" width="640" height="360" >https://txcom-ad.s3-ap-northeast-1.amazonaws.com/simid/mp4/black.mp4</MediaFile>
+              <MediaFile delivery="progressive" type="video/mp4" width="640" height="360" >https://rriku.github.io/simid_sample/creatives/mp4/black.mp4</MediaFile>
               <InteractiveCreativeFile type="text/html" apiFramework="SIMID" variableDuration="true">https://rriku.github.io/simid_sample/creatives/index.html</InteractiveCreativeFile>
             </MediaFiles>
           </Linear>

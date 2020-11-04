@@ -23,7 +23,7 @@
               }
             </AdParameters>
             <MediaFiles>
-              <MediaFile delivery="progressive" type="video/mp4" width="640" height="360" >https://txcom-ad.s3-ap-northeast-1.amazonaws.com/simid/mp4/black.mp4</MediaFile>
+              <MediaFile delivery="progressive" type="video/mp4" width="640" height="360" >https://rriku.github.io/simid_sample/creatives/mp4/black.mp4</MediaFile>
               <InteractiveCreativeFile type="text/html" apiFramework="SIMID" variableDuration="true">https://rriku.github.io/simid_sample/creatives/index.html</InteractiveCreativeFile>
             </MediaFiles>
           </Linear>
