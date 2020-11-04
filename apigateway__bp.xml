@@ -18,7 +18,7 @@
               }
             </AdParameters>
             <MediaFiles>
-              <MediaFile delivery="progressive" type="video/mp4" width="640" height="360" >https://rriku.github.io/simid_sample/creatives/mp4/black.mp4</MediaFile>
+              <MediaFile delivery="progressive" apiFramework="SIMID"  type="video/mp4" width="640" height="360" >https://rriku.github.io/simid_sample/creatives/mp4/black.mp4</MediaFile>
               <InteractiveCreativeFile type="text/html" apiFramework="SIMID" variableDuration="true">https://rriku.github.io/simid_sample/creatives/index.html</InteractiveCreativeFile>
             </MediaFiles>
           </Linear>
