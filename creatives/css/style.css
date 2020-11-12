@@ -145,6 +145,12 @@ body {
   line-height: 150%;
 }
 
+@media screen and (max-width: 480px) {
+  .simid_creative_wrapper .options ul li label {
+    line-height: 110%;
+  }
+}
+
 .simid_creative_wrapper .options ul li#button_submit {
   background-color: #000;
 }
@@ -172,6 +178,13 @@ input[type="checkbox"] + label
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+}
+
+@media screen and (max-width: 480px) {
+  input[type="checkbox"] + label
+, li#button_submit span {
+    height: 25vh;
+  }
 }
 
 input[type="checkbox"] + label:last-child {

@@ -132,6 +132,9 @@ body{
                     /* float: right;
                     width: 95%; */
                     line-height: 150%;
+                    @include break_smp(){
+                        line-height: 110%;;
+                    }
                 }
                 &#button_submit{
                     background-color: #000;
@@ -162,7 +165,7 @@ input[type="checkbox"] + label
   vertical-align: middle;
   width: 50vw;
   @include break_smp(){
-      // padding:1vw 0;
+      height: 25vh;
   }
   padding-left: 35px!important;
   margin-bottom: 20px;
