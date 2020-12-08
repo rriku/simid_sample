@@ -106,6 +106,7 @@ class BaseSimidCreative {
   onAdStopped(eventData) {
     // After resolving the iframe with this ad should be cleaned up.
     this.simidProtocol.resolve(eventData, {});
+    console.log("ad_stopped!!");
   }
 
   /** Called when the creative receives the skip message from the player.*/
