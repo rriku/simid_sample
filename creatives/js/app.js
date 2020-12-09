@@ -228,6 +228,7 @@ function resetTimer(){
   clearInterval(timer);
   // limitMs = restMs = $('#time').val();
   limitMs = restMs = "120000";
+  console.log(limitMs);
   // limitMs = restMs = simidDuration;
   $('#bar').attr('value', 0);
 }
