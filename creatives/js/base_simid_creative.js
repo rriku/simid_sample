@@ -148,6 +148,7 @@ class BaseSimidCreative {
 
   onPause() {
     this.videoState.paused = true;
+    stopTimer();
     console.log("ad_paused!!");
   }
 

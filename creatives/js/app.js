@@ -265,3 +265,7 @@ function getAppOrWeb(){
 function setSkip(){
   simidController.skip();
 }
+
+function stopTimer(){
+  clearInterval(timer);
+}
