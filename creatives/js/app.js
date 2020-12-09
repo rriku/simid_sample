@@ -269,3 +269,6 @@ function setSkip(){
 function stopTimer(){
   clearInterval(timer);
 }
+function resumeTimer(){
+  timer = setInterval('countdown()', resolutionMs);
+}
