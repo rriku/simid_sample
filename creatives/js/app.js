@@ -25,7 +25,7 @@ var deviceType = "";
 var adParameters = "";
 
 // 時間
-var simidDuration = 100000;
+var simidDuration = 60000;
 
 // 時間のバッファ
 var timeBuffer = 3000;
@@ -227,9 +227,9 @@ function countdown(){
 function resetTimer(){
   clearInterval(timer);
   // limitMs = restMs = $('#time').val();
-  limitMs = restMs = "120000";
+  // limitMs = restMs = "120000";
+  limitMs = restMs = String(simidDuration+timeBuffer);
   console.log(limitMs);
-  // limitMs = restMs = simidDuration;
   $('#bar').attr('value', 0);
 }
 
