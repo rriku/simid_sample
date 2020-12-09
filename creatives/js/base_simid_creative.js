@@ -154,6 +154,7 @@ class BaseSimidCreative {
 
   onPlay() {
     this.videoState.paused = false;
+    resumeTimer();
     console.log("ad_resumed!!");
   }
 
