@@ -93,7 +93,7 @@ class BaseSimidCreative {
   onStart(eventData) {
     // Acknowledge that the ad is started.
     this.simidProtocol.resolve(eventData, {});
-    console.log('Simid creative started.')
+    console.log('Simid creative started！！！！')
   }
 
   /** Called when the creative receives the fatal error message from the player.*/
