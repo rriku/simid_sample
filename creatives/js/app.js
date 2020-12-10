@@ -65,7 +65,6 @@ class SimidController extends BaseSimidCreative {
 }
 
 
-
 // SIMID制御クラス
 const simidController = new SimidController();
 
@@ -105,6 +104,8 @@ function main(){
 
 
       // console.log(simidController.creativeData.adParameters);
+
+      console.log(simidController.environmentData.duration);
 
       // タイマー開始
       $(function () {
