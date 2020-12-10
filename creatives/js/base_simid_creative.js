@@ -140,6 +140,7 @@ class BaseSimidCreative {
 
   onVideoEnded() {
     this.videoState.ended = true;
+    console.log("timeout");
   }
 
   onVideoError() {
