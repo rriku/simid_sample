@@ -105,7 +105,7 @@ function main(){
 
       // console.log(simidController.creativeData.adParameters);
 
-      console.log(simidController.environmentData.duration);
+      // console.log(simidController.environmentData.duration);
 
       // タイマー開始
       $(function () {
