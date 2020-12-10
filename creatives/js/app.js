@@ -125,11 +125,9 @@ function main(){
               $("input:checked").each(function() {
                 answer_data.push($(this).val());
               })
-
-              event = "2"; //回答
               
-              // ピクセルタグを送信
-              postPixel()
+              // ピクセルタグを送信  2=回答
+              postPixel("2")
 
               // 送信完了したら残りの広告はスキップ
               // simidController.skip();
@@ -137,10 +135,8 @@ function main(){
             }else{
               // 広告スキップ
 
-              event = "3"; //スキップ
-
-              // ピクセルタグを送信
-              postPixel()
+              // ピクセルタグを送信 //スキップ
+              postPixel("3")
 
               // simidController.skip();
               setTimeout(setSkip, 500);
@@ -215,7 +211,6 @@ function countdown(){
 
   if (restMs < 0) {
     //　タイムアウト
-    event = "4"; // タイムアウト
     // postPixel();
     // setTimeout(setSkip, 500);
   }
@@ -224,8 +219,8 @@ function countdown(){
 function resetTimer(){
   clearInterval(timer);
   // limitMs = restMs = $('#time').val();
-  limitMs = restMs = "60000";
-  // limitMs = restMs = String(simidDuration+timeBuffer);
+  // limitMs = restMs = "60000";
+  limitMs = restMs = String(simidDuration+timeBuffer);
   console.log(limitMs);
   $('#bar').attr('value', 0);
 }
@@ -257,12 +252,8 @@ function postPixel(postEvent){
   basImgTag = basImgTag.replace("__ANSWER_DATA__",JSON.stringify(answer_data));
 
   // 送信
-  // $("#simid_creative").html(basImgTag);
-  // $(debugElement).html(basImgTag)
   console.log(basImgTag);
   document.getElementById("debug_area").innerHTML = basImgTag;
-  // document.getElementById("debug_area").innerText = basImgTag;
-  // $("#simid_creative").html(basImgTag);
 }
 
 
@@ -290,5 +281,5 @@ window.addEventListener('beforeunload', unloaded, false);
 
 function unloaded(){
   console.log("unload");
-  postPixel();
+  postPixel("1");
 }
