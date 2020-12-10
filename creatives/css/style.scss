@@ -212,7 +212,7 @@ input[type="checkbox"]:checked + label:before {
     position:fixed;
     bottom: 0;
     @include break_pc(){
-        // display: none;
+        display: none;
     }
     input#time{
         height: 8px;
