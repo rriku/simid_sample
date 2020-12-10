@@ -224,8 +224,8 @@ function countdown(){
 function resetTimer(){
   clearInterval(timer);
   // limitMs = restMs = $('#time').val();
-  // limitMs = restMs = "120000";
-  limitMs = restMs = String(simidDuration+timeBuffer);
+  limitMs = restMs = "60000";
+  // limitMs = restMs = String(simidDuration+timeBuffer);
   console.log(limitMs);
   $('#bar').attr('value', 0);
 }
