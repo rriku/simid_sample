@@ -215,10 +215,9 @@ function countdown(){
 
   if (restMs < 0) {
     //　タイムアウト
-    // resetTimer();
     event = "4"; // タイムアウト
     postPixel();
-    setTimeout(setSkip, 500);
+    // setTimeout(setSkip, 500);
   }
 }
 
