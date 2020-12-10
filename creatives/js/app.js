@@ -216,7 +216,7 @@ function countdown(){
   if (restMs < 0) {
     //　タイムアウト
     event = "4"; // タイムアウト
-    postPixel();
+    // postPixel();
     // setTimeout(setSkip, 500);
   }
 }
@@ -238,7 +238,12 @@ $('input:checked').each(function() {
 
 
 // ピクセルタグ置換
-function postPixel(){
+function postPixel(postEvent){
+
+  if(postEvent){
+    event = postEvent;
+  }
+
   // デバイス種別取得
   deviceType = getAppOrWeb();
 
@@ -254,6 +259,7 @@ function postPixel(){
   // 送信
   // $("#simid_creative").html(basImgTag);
   // $(debugElement).html(basImgTag)
+  console.log(basImgTag);
   document.getElementById("debug_area").innerHTML = basImgTag;
   // document.getElementById("debug_area").innerText = basImgTag;
   // $("#simid_creative").html(basImgTag);
