@@ -1,5 +1,5 @@
 const params = {
-  'uri': "http://dev-video.tv-tokyo.co.jp.s3-website-ap-northeast-1.amazonaws.com/personal/",
+  'uri': "http://video.tv-tokyo.co.jp/personal/",
 };
 
 // タイムスタンプ生成
