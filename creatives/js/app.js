@@ -86,9 +86,6 @@ function main(){
       axios.get('./json/question.json?timestamp=' + timestamp).then(function (response) {
       // 取得完了したらlistリストに代入
       this.all_data = response.data;
-      this.show_data = this.all_data.filter(function(data, index){
-        console.log(data.surveyid);
-      });
       /* for(var i=0;i<this.all_data.length;i++){
         this.question_list.push(this.all_data[i].question);
         this.answer_list.push(this.all_data[i].answers);
@@ -110,6 +107,11 @@ function main(){
       // console.log(simidController.creativeData.adParameters);
 
       // console.log(simidController.environmentData.duration);
+      
+      this.show_data = this.all_data.filter(function(data, index){
+        console.log(data.surveyid);
+        console.log(data.surveyid);
+      });
 
       // タイマー開始
       $(function () {
