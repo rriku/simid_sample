@@ -61,10 +61,7 @@ class SimidController extends BaseSimidCreative {
   /*@override*/
   onStart(eventData) {
     super.onStart(eventData);
-    promise = new Promise((resolve, reject) => { // #1
-      adParameters = JSON.parse(this.creativeData.adParameters);
-      resolve('resolve');
-    })
+    adParameters = JSON.parse(this.creativeData.adParameters);
   }
 
 }
@@ -104,22 +101,26 @@ function main(){
       // 要素を読み込んだら表示
       $("#simid_creative").addClass("show");
 
-      // SIMIDセッションスタート
-      simidController.ready();
 
 
 
       // console.log(simidController.creativeData.adParameters);
 
       // console.log(simidController.environmentData.duration);
-      promise.then((msg) => { // #2
-        return new Promise((resolve, reject) => {
-          this.show_data = this.all_data.filter(function(data, index){
-            console.log(adParameters.surveyid);
-            console.log(data.surveyId);
-          });
+      $.when(
+        // SIMIDセッションスタート
+        simidController.ready()
+      ).done(function() {
+        this.show_data = this.all_data.filter(function(data, index){
+          console.log(adParameters.surveyid);
+          console.log(data.surveyId);
         })
-      })
+      }).fail(function() {
+        // エラーが発生したときの処理
+      });
+
+
+  
 
       // タイマー開始
       $(function () {
