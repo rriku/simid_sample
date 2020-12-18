@@ -78,6 +78,7 @@ function main(){
     el: '#simid_creative',
     data: {
       all_data:[],
+      show_data:[],
       question_list: [],
       answer_list:[]
     },
@@ -85,6 +86,9 @@ function main(){
       axios.get('./json/question.json?timestamp=' + timestamp).then(function (response) {
       // 取得完了したらlistリストに代入
       this.all_data = response.data;
+      this.show_data = all_data.filter(function(data, index){
+        console.log(data.surveyid);
+      });
       /* for(var i=0;i<this.all_data.length;i++){
         this.question_list.push(this.all_data[i].question);
         this.answer_list.push(this.all_data[i].answers);
