@@ -76,7 +76,7 @@ main();
 
 
 function main(){
-  new Vue({
+  var vue =  new Vue({
     el: '#simid_creative',
     data: {
       all_data:[],
@@ -111,7 +111,7 @@ function main(){
         // SIMIDセッションスタート
         simidController.ready()
       ).done(function() {
-        this.show_data = this.all_data.filter(function(data, index){
+        vue.show_data = vue.all_data.filter(function(data, index){
           console.log(adParameters.surveyid);
           console.log(data.surveyId);
         })
