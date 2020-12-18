@@ -109,7 +109,7 @@ function main(){
       // console.log(simidController.environmentData.duration);
 
       this.show_data = this.all_data.filter(function(data, index){
-        console.log(simidController.creativeData.adParameters.surveyid);
+        console.log(adParameters.surveyid);
         console.log(data.surveyId);
       });
 
