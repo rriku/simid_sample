@@ -32,6 +32,9 @@ var timeBuffer = 0;
 
 let promise ;
 
+// 質問数
+var tempOptionsVal = 0;
+
 // ピクセルタグ
 var basImgTag = "<img style='height:1px;width:1px;' src='https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&survey_id=__SURVEY_ID__&answer_data=__ANSWER_DATA__&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua&identifier=__DEVICE_ID__&event=__EVENT__&device=__DEVICE__&vpos=__VPOS__&platform=__PLATFORM__&vid=__VID__' />";
 
@@ -95,8 +98,10 @@ function main(){
     },
     created: function () {
       axios.get('./json/question.json?timestamp=' + timestamp).then(function (response) {
+      tempOptionsVal = 0;
       // 取得完了したらlistリストに代入
       this.all_data = response.data.filter(function(data, index){
+        tempOptionsVal++;
         if(adParameters.surveyid == data.surveyId){
           console.log(data.surveyId);
           return true;
@@ -110,8 +115,8 @@ function main(){
     updated: function () {
 
       // 要素を読み込んだら表示
-      console.log(this.all_data.length);
-      if(this.all_data.length > 4){
+      console.log(tempOptionsVal);
+      if(tempOptionsVal > 4){
         $("#simid_creative .options li").addClass("three_row");
       }else{
         $("#simid_creative .options li").addClass("two_row");
