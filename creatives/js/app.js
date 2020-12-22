@@ -60,8 +60,14 @@ class SimidController extends BaseSimidCreative {
 
   /*@override*/
   onStart(eventData) {
-    super.onStart(eventData);
     adParameters = JSON.parse(this.creativeData.adParameters);
+    $.when(
+      super.onStart(eventData)
+    ).done(function() {
+      main();
+    }).fail(function() {
+      // エラーが発生したときの処理
+    });
   }
 
 }
@@ -103,10 +109,6 @@ function main(){
 
 
 
-
-      // console.log(simidController.creativeData.adParameters);
-
-      // console.log(simidController.environmentData.duration);
       $.when(
         // SIMIDセッションスタート
         simidController.ready()
