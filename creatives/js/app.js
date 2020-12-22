@@ -82,6 +82,9 @@ simidController.ready()
 
 
 function main(){
+
+  console.log("AdId is " + adParameters.surveyid);
+
   var vue =  new Vue({
     el: '#simid_creative',
     data: {
@@ -100,7 +103,7 @@ function main(){
         }
       })
 
-      console.log)("d");
+      console.log("d");
 
       }.bind(this)).catch(function (e) {
         console.error(e)
