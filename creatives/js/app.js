@@ -110,6 +110,7 @@ function main(){
     updated: function () {
 
       // 要素を読み込んだら表示
+      console.log(this.all_data.length);
       if(this.all_data.length > 4){
         $("#simid_creative .options li").addClass("three_row");
       }else{
