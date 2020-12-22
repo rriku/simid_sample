@@ -98,6 +98,13 @@ function main(){
         this.question_list.push(this.all_data[i].question);
         this.answer_list.push(this.all_data[i].answers);
       } */
+      this.all_data = this.all_data.filter(function(data, index){
+        if(adParameters.surveyid == data.surveyId){
+          console.log(data.surveyId);
+          return true;
+        }
+      })
+      
       }.bind(this)).catch(function (e) {
         console.error(e)
       });
@@ -106,16 +113,6 @@ function main(){
 
       // 要素を読み込んだら表示
       $("#simid_creative").addClass("show");
-
-
-
-
-      vue.all_data = vue.all_data.filter(function(data, index){
-        if(adParameters.surveyid == data.surveyId){
-          console.log(data.surveyId);
-          return true;
-        }
-      })
 
 
   
