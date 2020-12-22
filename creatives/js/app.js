@@ -80,6 +80,7 @@ const simidController = new SimidController();
 // SIMIDセッションスタート
 simidController.ready()
 
+
 function main(){
   var vue =  new Vue({
     el: '#simid_creative',
