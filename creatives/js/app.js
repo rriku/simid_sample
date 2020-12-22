@@ -111,10 +111,12 @@ function main(){
 
 
       vue.show_data = vue.all_data.filter(function(data, index){
-        console.log(adParameters.surveyid);
-        console.log(data.surveyId);
+        if(adParameters.surveyid == data.surveyId){
+          return true;
+        }
       })
 
+      console.log(vue.show_data);
 
   
 
