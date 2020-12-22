@@ -15,7 +15,7 @@
     <img id="button_privacy" src="./img/info.png">
     <img id="button_fullscreen" src="./img/full.png">
     <p id="debug_area" style="position: absolute;opacity: 0.5;width:300px;height: 100px;"></p>
-    <div v-for="(data, d_index) in show_data"  :key="d_index" >
+    <div v-for="(data, d_index) in all_data"  :key="d_index" >
       <div class="question">
         {{ data.question }}
       </div>
