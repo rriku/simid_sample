@@ -93,17 +93,19 @@ function main(){
     created: function () {
       axios.get('./json/question.json?timestamp=' + timestamp).then(function (response) {
       // 取得完了したらlistリストに代入
-      this.all_data = response.data;
-      /* for(var i=0;i<this.all_data.length;i++){
-        this.question_list.push(this.all_data[i].question);
-        this.answer_list.push(this.all_data[i].answers);
-      } */
-      /* this.all_data = this.all_data.filter(function(data, index){
+      this.all_data = this.all_data.filter(function(data, index){
         if(adParameters.surveyid == data.surveyId){
           console.log(data.surveyId);
           return true;
         }
-      }) */
+      })
+
+      this.all_data = this.all_data.filter(function(data, index){
+        if(adParameters.surveyid == data.surveyId){
+          console.log(data.surveyId);
+          return true;
+        }
+      })
 
       }.bind(this)).catch(function (e) {
         console.error(e)
