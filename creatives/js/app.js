@@ -115,8 +115,8 @@ function main(){
     updated: function () {
 
       // 要素を読み込んだら表示
-      console.log(tempOptionsVal);
-      if(tempOptionsVal > 4){
+      console.log(this.all_data.options);
+      if(this.all_data.options > 4){
         $("#simid_creative .options li").addClass("three_row");
       }else{
         $("#simid_creative .options li").addClass("two_row");
