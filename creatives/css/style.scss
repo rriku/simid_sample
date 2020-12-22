@@ -175,6 +175,15 @@ input[type="checkbox"] + label
   -moz-user-select: none;
   -ms-user-select: none;
 }
+li.three_row{
+    input[type="checkbox"] + label 
+    ,li#button_submit span{
+      height: 25vh;
+      @include break_smp(){
+          height: 20vh;
+      }
+    }
+}
 
 input[type="checkbox"] + label:last-child { margin-bottom: 0; }
 

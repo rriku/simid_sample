@@ -187,6 +187,18 @@ input[type="checkbox"] + label
   }
 }
 
+li.three_row input[type="checkbox"] + label
+, li.three_row li#button_submit span {
+  height: 25vh;
+}
+
+@media screen and (max-width: 480px) {
+  li.three_row input[type="checkbox"] + label
+, li.three_row li#button_submit span {
+    height: 20vh;
+  }
+}
+
 input[type="checkbox"] + label:last-child {
   margin-bottom: 0;
 }
