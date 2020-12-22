@@ -110,7 +110,11 @@ function main(){
     updated: function () {
 
       // 要素を読み込んだら表示
-      $("#simid_creative .options li").addClass("three_row");
+      if(vue.all_data.length>4){
+        $("#simid_creative .options li").addClass("three_row");
+      }else{
+        $("#simid_creative .options li").addClass("two_row");
+      }
       $("#simid_creative").addClass("show");
 
 
