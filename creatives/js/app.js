@@ -96,7 +96,7 @@ function main(){
     created: function () {
       axios.get('./json/question.json?timestamp=' + timestamp).then(function (response) {
       // 取得完了したらlistリストに代入
-      this.all_data = this.all_data.filter(function(data, index){
+      this.all_data = response.data.filter(function(data, index){
         if(adParameters.surveyid == data.surveyId){
           console.log(data.surveyId);
           return true;
