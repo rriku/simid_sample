@@ -103,8 +103,6 @@ function main(){
         }
       })
 
-      console.log("d");
-
       }.bind(this)).catch(function (e) {
         console.error(e)
       });
@@ -112,6 +110,7 @@ function main(){
     updated: function () {
 
       // 要素を読み込んだら表示
+      $("#simid_creative .options li").addClass("six_row");
       $("#simid_creative").addClass("show");
 
 
