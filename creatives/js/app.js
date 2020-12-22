@@ -77,7 +77,8 @@ class SimidController extends BaseSimidCreative {
 const simidController = new SimidController();
 
 
-
+// SIMIDセッションスタート
+simidController.ready()
 
 function main(){
   var vue =  new Vue({
@@ -107,17 +108,11 @@ function main(){
 
 
 
-      $.when(
-        // SIMIDセッションスタート
-        simidController.ready()
-      ).done(function() {
-        vue.show_data = vue.all_data.filter(function(data, index){
-          console.log(adParameters.surveyid);
-          console.log(data.surveyId);
-        })
-      }).fail(function() {
-        // エラーが発生したときの処理
-      });
+
+      vue.show_data = vue.all_data.filter(function(data, index){
+        console.log(adParameters.surveyid);
+        console.log(data.surveyId);
+      })
 
 
   
