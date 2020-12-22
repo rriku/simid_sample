@@ -76,8 +76,6 @@ class SimidController extends BaseSimidCreative {
 // SIMID制御クラス
 const simidController = new SimidController();
 
-// メイン処理開始
-main();
 
 
 
