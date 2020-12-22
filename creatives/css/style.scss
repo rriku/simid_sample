@@ -162,7 +162,7 @@ input[type="checkbox"] + label
   // padding:2vw 0;
   display: table-cell;
   // height: 25vh;
-  // vertical-align: middle;
+  vertical-align: middle;
   width: 50vw;
   @include break_smp(){
       // height: 20vh;

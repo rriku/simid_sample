@@ -168,6 +168,7 @@ input[type="checkbox"] + label
 , li#button_submit span {
   display: block;
   display: table-cell;
+  vertical-align: middle;
   width: 50vw;
   padding-left: 35px !important;
   margin-bottom: 20px;
