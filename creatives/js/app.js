@@ -100,12 +100,7 @@ function main(){
         }
       })
 
-      this.all_data = this.all_data.filter(function(data, index){
-        if(adParameters.surveyid == data.surveyId){
-          console.log(data.surveyId);
-          return true;
-        }
-      })
+      console.log)("d");
 
       }.bind(this)).catch(function (e) {
         console.error(e)
