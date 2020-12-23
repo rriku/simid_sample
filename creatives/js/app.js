@@ -117,9 +117,9 @@ function main(){
       // 要素を読み込んだら表示
       console.log(this.all_data[0].answers.length);
       if(this.all_data[0].answers.length > 4){
-        $("#simid_creative .options").addClass("three_row");
+        $("#simid_creative .options ul").addClass("three_row");
       }else{
-        $("#simid_creative .options").addClass("two_row");
+        $("#simid_creative .options ul").addClass("two_row");
       }
       $("#simid_creative").addClass("show");
 
