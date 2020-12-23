@@ -168,6 +168,7 @@ input[type="checkbox"] + label
 , li#button_submit span {
   display: block;
   display: table-cell;
+  height: 25vh;
   vertical-align: middle;
   width: 50vw;
   padding-left: 35px !important;
@@ -177,6 +178,13 @@ input[type="checkbox"] + label
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+}
+
+@media screen and (max-width: 480px) {
+  input[type="checkbox"] + label
+, li#button_submit span {
+    height: 20vh;
+  }
 }
 
 li.three_row input[type="checkbox"] + label

@@ -161,11 +161,11 @@ input[type="checkbox"] + label
   // position: relative;
   // padding:2vw 0;
   display: table-cell;
-  // height: 25vh;
+  height: 25vh;
   vertical-align: middle;
   width: 50vw;
   @include break_smp(){
-      // height: 20vh;
+      height: 20vh;
   }
   padding-left: 35px!important;
   margin-bottom: 20px;
