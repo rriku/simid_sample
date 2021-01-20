@@ -337,7 +337,7 @@ function resumeTimer(){
 }
 
 // ページ離脱処理
-window.addEventListener('beforeunload', unloaded, false);
+// window.addEventListener('beforeunload', unloaded, false);
 
 function unloaded(){
   console.log("unload");
