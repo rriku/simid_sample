@@ -40,7 +40,7 @@ let promise ;
 var tempOptionsVal = 0;
 
 // ピクセルタグ
-var basImgTag = "<img style='height:1px;width:1px;' src='https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&survey_id=__SURVEY_ID__&answer_data=__ANSWER_DATA__&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua&identifier=__DEVICE_ID__&event=__EVENT__&device=__DEVICE__&vpos=__VPOS__&platform=__PLATFORM__&vid=__VID__' />";
+const baseImgTag = "<img style='height:1px;width:1px;' src='https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&survey_id=__SURVEY_ID__&answer_data=__ANSWER_DATA__&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua&identifier=__DEVICE_ID__&event=__EVENT__&device=__DEVICE__&vpos=__VPOS__&platform=__PLATFORM__&vid=__VID__' />";
 
 class SimidController extends BaseSimidCreative {
   // コンストラクタ
@@ -127,7 +127,7 @@ function main(){
       postPixel("1");
 
       // 要素を読み込んだら表示
-      console.log(this.all_data[0].answers.length);
+      // console.log(this.all_data[0].answers.length);
       if(this.all_data[0].answers.length > 4){
         $("#simid_creative .options ul").addClass("three_row");
       }else{
@@ -252,7 +252,7 @@ function resetTimer(){
   // limitMs = restMs = $('#time').val();
   // limitMs = restMs = "60000";
   limitMs = restMs = String(simidDuration+timeBuffer);
-  console.log(limitMs);
+  // console.log(limitMs);
   $('#bar').attr('value', 0);
 }
 
@@ -264,7 +264,9 @@ $('input:checked').each(function() {
 
 
 // ピクセルタグ送信
-/* function postPixel(postEvent){
+function postPixel(postEvent){
+
+  var postImgTag = baseImgTag;
 
   if(postEvent){
     event = postEvent;
@@ -273,20 +275,20 @@ $('input:checked').each(function() {
   // デバイス種別取得
   deviceType = getAppOrWeb();
 
-  basImgTag = basImgTag.replace("__SURVEY_ID__",adParameters.surveyid);
-  basImgTag = basImgTag.replace("__DEVICE_ID__",adParameters.identifer);
-  basImgTag = basImgTag.replace("__PLATFORM__",adParameters.platform);
-  basImgTag = basImgTag.replace("__VID__",adParameters.vid);
-  basImgTag = basImgTag.replace("__VPOS__",adParameters.vpos);
-  basImgTag = basImgTag.replace("__EVENT__",event);
-  basImgTag = basImgTag.replace("__DEVICE__",deviceType);
-  basImgTag = basImgTag.replace("__ANSWER_DATA__",JSON.stringify(answer_data));
+  postImgTag = postImgTag.replace("__SURVEY_ID__",adParameters.surveyid);
+  postImgTag = postImgTag.replace("__DEVICE_ID__",adParameters.identifer);
+  postImgTag = postImgTag.replace("__PLATFORM__",adParameters.platform);
+  postImgTag = postImgTag.replace("__VID__",adParameters.vid);
+  postImgTag = postImgTag.replace("__VPOS__",adParameters.vpos);
+  postImgTag = postImgTag.replace("__EVENT__",event);
+  postImgTag = postImgTag.replace("__DEVICE__",deviceType);
+  postImgTag = postImgTag.replace("__ANSWER_DATA__",JSON.stringify(answer_data));
 
   // 送信
-  console.log(basImgTag);
-  document.getElementById("debug_area").innerHTML = basImgTag;
-} */
-function postPixel(postEvent){
+  console.log(postImgTag);
+  document.getElementById("debug_area").innerHTML = postImgTag;
+}
+/* function postPixel(postEvent){
   var pixelUri = {
     'uri': ""
   };
@@ -313,7 +315,7 @@ function postPixel(postEvent){
   console.log(pixelUri.uri);
   simidController.post(pixelUri);
 }
-
+ */
 
 function getAppOrWeb(){
   if (navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('Mobile') > 0 || navigator.userAgent.indexOf('iPad') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('Mobile') > 0) {
