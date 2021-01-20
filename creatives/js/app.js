@@ -2,6 +2,10 @@ const params = {
   'uri': "http://video.tv-tokyo.co.jp/personal/",
 };
 
+const pixels = {
+  'uri': "https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&survey_id=__SURVEY_ID__&answer_data=__ANSWER_DATA__&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua&identifier=__DEVICE_ID__&event=__EVENT__&device=__DEVICE__&vpos=__VPOS__&platform=__PLATFORM__&vid=__VID__"
+};
+
 // タイムスタンプ生成
 var timestamp = new Date().getTime();
 
@@ -54,6 +58,11 @@ class SimidController extends BaseSimidCreative {
   // プラポリオープン
   privacy(){
     this.simidProtocol.sendMessage(CreativeMessage.REQUEST_NAVIGATION, params );
+  }
+
+  // ピクセルタグ呼び出し
+  post(uri){
+    this.simidProtocol.sendMessage(CreativeMessage.REQUEST_TRACKING, uri );
   }
 
   // フルスクリーン
@@ -113,6 +122,9 @@ function main(){
       });
     },
     updated: function () {
+
+      // 要素を読み込んだ段階でimpレコード
+      postPixel("1");
 
       // 要素を読み込んだら表示
       console.log(this.all_data[0].answers.length);
@@ -251,8 +263,8 @@ $('input:checked').each(function() {
 })
 
 
-// ピクセルタグ置換
-function postPixel(postEvent){
+// ピクセルタグ送信
+/* function postPixel(postEvent){
 
   if(postEvent){
     event = postEvent;
@@ -273,6 +285,33 @@ function postPixel(postEvent){
   // 送信
   console.log(basImgTag);
   document.getElementById("debug_area").innerHTML = basImgTag;
+} */
+function postPixel(postEvent){
+  var pixelUri = {
+    'uri': ""
+  };
+
+  pixelUri.uri = pixels.uri;
+
+  if(postEvent){
+    event = postEvent;
+  }
+
+  // デバイス種別取得
+  deviceType = getAppOrWeb();
+
+  pixelUri.uri = pixelUri.uri.replace("__SURVEY_ID__",adParameters.surveyid);
+  pixelUri.uri = pixelUri.uri.replace("__DEVICE_ID__",adParameters.identifer);
+  pixelUri.uri = pixelUri.uri.replace("__PLATFORM__",adParameters.platform);
+  pixelUri.uri = pixelUri.uri.replace("__VID__",adParameters.vid);
+  pixelUri.uri = pixelUri.uri.replace("__VPOS__",adParameters.vpos);
+  pixelUri.uri = pixelUri.uri.replace("__EVENT__",event);
+  pixelUri.uri = pixelUri.uri.replace("__DEVICE__",deviceType);
+  pixelUri.uri = pixelUri.uri.replace("__ANSWER_DATA__",JSON.stringify(answer_data));
+
+  // 送信
+  console.log(pixelUri.uri);
+  simidController.post(pixelUri);
 }
 
 
