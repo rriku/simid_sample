@@ -240,9 +240,9 @@ function countdown(){
 
   $('#bar').attr('value', restBarLength);
 
-  if (restMs < 0) {
+  if (restMs < 1000) {
     //　タイムアウト
-    // postPixel();
+    postPixel("4");
     // setTimeout(setSkip, 500);
   }
 }
