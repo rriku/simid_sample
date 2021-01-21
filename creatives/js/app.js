@@ -240,9 +240,9 @@ function countdown(){
 
   $('#bar').attr('value', restBarLength);
 
-  if (restMs < 1000) {
+  if (restMs < 0) {
     //　タイムアウト
-    postPixel("4");
+    // postPixel();
     // setTimeout(setSkip, 500);
   }
 }
@@ -285,8 +285,21 @@ function postPixel(postEvent){
   postImgTag = postImgTag.replace("__ANSWER_DATA__",JSON.stringify(answer_data));
 
   // 送信
-  console.log(postImgTag);
-  document.getElementById("debug_area").innerHTML = postImgTag;
+  // console.log(postImgTag);
+  // document.getElementById("debug_area").innerHTML = postImgTag;
+
+  $.when(
+    insertPixel(postImgTag)
+  ).done(function() {
+    onsole.log(postImgTag);
+  }).fail(function() {
+    // エラーが発生したときの処理
+  });
+
+}
+
+function insertPixel(tag){
+  document.getElementById("debug_area").innerHTML = tag;
 }
 /* function postPixel(postEvent){
   var pixelUri = {
