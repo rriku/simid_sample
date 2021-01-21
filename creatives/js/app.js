@@ -291,7 +291,7 @@ function postPixel(postEvent){
   $.when(
     insertPixel(postImgTag)
   ).done(function() {
-    onsole.log(postImgTag);
+    console.log(postImgTag);
   }).fail(function() {
     // エラーが発生したときの処理
   });
