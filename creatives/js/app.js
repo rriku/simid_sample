@@ -315,9 +315,9 @@ function resumeTimer(){
   timer = setInterval('countdown()', resolutionMs);
 }
 
-// 離脱
-$(window).unload(function() {
-  
+// ページ離脱処理
+window.addEventListener('beforeunload', unloaded, false);
+function unloaded(){
   globalPost();
-  alert("ページ離脱");
-});
+  alert("離脱");
+}
