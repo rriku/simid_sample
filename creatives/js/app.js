@@ -318,3 +318,8 @@ function stopTimer(){
 function resumeTimer(){
   timer = setInterval('countdown()', resolutionMs);
 }
+
+// 離脱
+$(window).unload(function() {
+  globalPost();
+});
