@@ -68,9 +68,9 @@ class SimidController extends BaseSimidCreative {
 /*   post(uri){
     this.simidProtocol.sendMessage(CreativeMessage.REQUEST_TRACKING, uri );
   } */
-  post(){
-    console.log("report:"+ pixels.trackingUrls);
-    this.simidProtocol.sendMessage(CreativeMessage.REQUEST_TRACKING, pixels );
+  post(tempPixels){
+    console.log("report:"+ tempPixels.trackingUrls);
+    this.simidProtocol.sendMessage(CreativeMessage.REQUEST_TRACKING, tempPixels );
   }
 
   // フルスクリーン
@@ -273,7 +273,7 @@ $('input:checked').each(function() {
 
 
 // ピクセルタグ送信
-function postPixel(postEvent){
+/* function postPixel(postEvent){
 
   var postImgTag = baseImgTag;
 
@@ -294,32 +294,15 @@ function postPixel(postEvent){
   postImgTag = postImgTag.replace("__ANSWER_DATA__",JSON.stringify(answer_data));
 
   // 送信
-  // console.log(postImgTag);
-  // document.getElementById("debug_area").innerHTML = postImgTag;
+  console.log(postImgTag);
+  document.getElementById("debug_area").innerHTML = postImgTag;
 
-  $.when(
-    insertPixel(postImgTag)
-  ).done(function() {
-    console.log(postImgTag);
-  }).fail(function() {
-    // エラーが発生したときの処理
-  });
+} */
 
-}
+function postPixel(postEvent){
+  var tempPixels ;
 
-function insertPixel(tag){
-  // document.getElementById("debug_area").innerHTML = tag;
-  /* var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&survey_id=138317487054&answer_data=[]&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua&identifier=&event=4&device=2&vpos=preroll&platform=9001&vid=5843135606001');
-  xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
-  xhr.send( '' ); */
-}
-/* function postPixel(postEvent){
-  var pixelUri = {
-    'uri': ""
-  };
-
-  pixelUri.uri = pixels.uri;
+  tempPixels = pixels;
 
   if(postEvent){
     event = postEvent;
@@ -328,20 +311,20 @@ function insertPixel(tag){
   // デバイス種別取得
   deviceType = getAppOrWeb();
 
-  pixelUri.uri = pixelUri.uri.replace("__SURVEY_ID__",adParameters.surveyid);
-  pixelUri.uri = pixelUri.uri.replace("__DEVICE_ID__",adParameters.identifer);
-  pixelUri.uri = pixelUri.uri.replace("__PLATFORM__",adParameters.platform);
-  pixelUri.uri = pixelUri.uri.replace("__VID__",adParameters.vid);
-  pixelUri.uri = pixelUri.uri.replace("__VPOS__",adParameters.vpos);
-  pixelUri.uri = pixelUri.uri.replace("__EVENT__",event);
-  pixelUri.uri = pixelUri.uri.replace("__DEVICE__",deviceType);
-  pixelUri.uri = pixelUri.uri.replace("__ANSWER_DATA__",JSON.stringify(answer_data));
+  tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__SURVEY_ID__",adParameters.surveyid);
+  tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__DEVICE_ID__",adParameters.identifer);
+  tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__PLATFORM__",adParameters.platform);
+  tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__VID__",adParameters.vid);
+  tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__VPOS__",adParameters.vpos);
+  tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__EVENT__",event);
+  tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__DEVICE__",deviceType);
+  tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__ANSWER_DATA__",JSON.stringify(answer_data));
 
   // 送信
-  console.log(pixelUri.uri);
-  simidController.post(pixelUri);
+  console.log(tempPixels);
+  simidController.post(tempPixels);
 }
- */
+
 
 function getAppOrWeb(){
   if (navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('Mobile') > 0 || navigator.userAgent.indexOf('iPad') > 0 || navigator.userAgent.indexOf('Android') > 0 || navigator.userAgent.indexOf('Mobile') > 0) {
