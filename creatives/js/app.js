@@ -286,9 +286,7 @@ function postPixel(postEvent){
     pixels.trackingUrls.push(tempPixel);
     console.log("pushed:"+ tempPixel);
     if(event != "1"){
-      console.log("trackingReport");
-      console.log(pixels.trackingUrls);
-      simidController.post(pixels);
+      globalPost();
     }
   })
 }
@@ -300,6 +298,14 @@ function getAppOrWeb(){
   } else {
     return "2";
   }
+}
+
+function globalPost(){
+  console.log("trackingReport");
+  for(var i=0;i<pixels.trackingUrls.length;i++){
+    console.log(pixels.trackingUrls[i]);
+  }
+  simidController.post(pixels);
 }
 
 function setSkip(){
