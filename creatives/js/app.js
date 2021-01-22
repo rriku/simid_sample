@@ -1,5 +1,5 @@
 const params = {
-  'uri': "http://video.tv-tokyo.co.jp/personal/",
+  'uri': "https://video.tv-tokyo.co.jp/personal/",
 };
 
 const pixels = {
