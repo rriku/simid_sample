@@ -319,5 +319,4 @@ function resumeTimer(){
 window.addEventListener('beforeunload', unloaded, false);
 function unloaded(){
   globalPost();
-  alert("離脱");
 }
