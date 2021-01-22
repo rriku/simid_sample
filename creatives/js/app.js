@@ -39,9 +39,6 @@ let promise ;
 // 質問数
 var tempOptionsVal = 0;
 
-// ピクセルタグ
-const baseImgTag = "<img style='height:1px;width:1px;' src='https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&survey_id=__SURVEY_ID__&answer_data=__ANSWER_DATA__&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua&identifier=__DEVICE_ID__&event=__EVENT__&device=__DEVICE__&vpos=__VPOS__&platform=__PLATFORM__&vid=__VID__' />";
-
 class SimidController extends BaseSimidCreative {
   // コンストラクタ
   constructor() {
@@ -62,7 +59,6 @@ class SimidController extends BaseSimidCreative {
 
   // ピクセルタグ呼び出し
   post(tempPixels){
-    console.log("report:"+ tempPixels);
     this.simidProtocol.sendMessage(CreativeMessage.REQUEST_TRACKING, tempPixels );
   }
 
@@ -174,8 +170,8 @@ function main(){
 
         // プラポリ
         $("#button_privacy").click(function(){
-          // simidController.privacy();
-          simidController.post();
+          simidController.privacy();
+          // simidController.post();
           return false;
         });
 
