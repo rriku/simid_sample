@@ -291,7 +291,7 @@ function postPixel(postEvent){
     console.log("pushed:"+ tempPixel);
     if(event != "1"){
       console.log("trackingReport");
-      console.log(pixels);
+      console.log(pixels.trackingUrls);
       simidController.post(pixels);
     }
   })
