@@ -292,7 +292,7 @@ function postPixel(postEvent){
     if(event != "1"){
       console.log("trackingReport");
       console.log(pixels);
-      post(pixels);
+      simidController.post(pixels);
     }
   })
 }
