@@ -65,9 +65,6 @@ class SimidController extends BaseSimidCreative {
   }
 
   // ピクセルタグ呼び出し
-/*   post(uri){
-    this.simidProtocol.sendMessage(CreativeMessage.REQUEST_TRACKING, uri );
-  } */
   post(tempPixels){
     console.log("report:"+ tempPixels.trackingUrls);
     this.simidProtocol.sendMessage(CreativeMessage.REQUEST_TRACKING, tempPixels );
@@ -278,19 +275,21 @@ function postPixel(postEvent){
 
   // デバイス種別取得
   deviceType = getAppOrWeb();
-
-  tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__SURVEY_ID__",adParameters.surveyid);
-  tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__DEVICE_ID__",adParameters.identifer);
-  tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__PLATFORM__",adParameters.platform);
-  tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__VID__",adParameters.vid);
-  tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__VPOS__",adParameters.vpos);
-  tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__EVENT__",event);
-  tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__DEVICE__",deviceType);
-  tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__ANSWER_DATA__",JSON.stringify(answer_data));
-
-  // 送信
-  console.log(tempPixels);
-  simidController.post(tempPixels);
+  $.when(
+    tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__SURVEY_ID__",adParameters.surveyid),
+    tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__DEVICE_ID__",adParameters.identifer),
+    tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__PLATFORM__",adParameters.platform),
+    tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__VID__",adParameters.vid),
+    tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__VPOS__",adParameters.vpos),
+    tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__EVENT__",event),
+    tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__DEVICE__",deviceType),
+    tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__ANSWER_DATA__",JSON.stringify(answer_data))
+  )
+  .done(function(data_a, data_b) {
+    // 送信
+    console.log(tempPixels);
+    simidController.post(tempPixels);
+  })
 }
 
 
