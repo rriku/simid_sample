@@ -61,8 +61,11 @@ class SimidController extends BaseSimidCreative {
   }
 
   // ピクセルタグ呼び出し
-  post(uri){
+/*   post(uri){
     this.simidProtocol.sendMessage(CreativeMessage.REQUEST_TRACKING, uri );
+  } */
+  post(){
+    this.simidProtocol.sendMessage(CreativeMessage.REQUEST_TRACKING, pixels );
   }
 
   // フルスクリーン
@@ -177,7 +180,8 @@ function main(){
 
         // プラポリ
         $("#button_privacy").click(function(){
-          simidController.privacy();
+          // simidController.privacy();
+          simidController.post();
           return false;
         });
 
