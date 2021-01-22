@@ -2,10 +2,14 @@ const params = {
   'uri': "https://video.tv-tokyo.co.jp/personal/",
 };
 
-const pixels = {
+/* const pixels = {
   'trackingUrls': ["https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&survey_id=__SURVEY_ID__&answer_data=__ANSWER_DATA__&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua&identifier=__DEVICE_ID__&event=__EVENT__&device=__DEVICE__&vpos=__VPOS__&platform=__PLATFORM__&vid=__VID__"]
-};
+}; */
 
+const basePixelUri = "https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&survey_id=__SURVEY_ID__&answer_data=__ANSWER_DATA__&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua&identifier=__DEVICE_ID__&event=__EVENT__&device=__DEVICE__&vpos=__VPOS__&platform=__PLATFORM__&vid=__VID__";
+var pixels = {
+  'trackingUrls' : []
+}
 // タイムスタンプ生成
 var timestamp = new Date().getTime();
 
@@ -62,7 +66,7 @@ class SimidController extends BaseSimidCreative {
 
   // ピクセルタグ呼び出し
   post(tempPixels){
-    console.log("report:"+ tempPixels.trackingUrls);
+    console.log("report:"+ tempPixels);
     this.simidProtocol.sendMessage(CreativeMessage.REQUEST_TRACKING, tempPixels );
   }
 
@@ -261,9 +265,9 @@ $('input:checked').each(function() {
 })
 
 function postPixel(postEvent){
-  var tempPixels ;
+  var tempPixel ;
 
-  tempPixels = pixels;
+  tempPixel = basePixelUri;
 
   if(postEvent){
     event = postEvent;
@@ -272,19 +276,24 @@ function postPixel(postEvent){
   // デバイス種別取得
   deviceType = getAppOrWeb();
   $.when(
-    tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__SURVEY_ID__",adParameters.surveyid),
-    tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__DEVICE_ID__",adParameters.identifer),
-    tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__PLATFORM__",adParameters.platform),
-    tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__VID__",adParameters.vid),
-    tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__VPOS__",adParameters.vpos),
-    tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__EVENT__",event),
-    tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__DEVICE__",deviceType),
-    tempPixels.trackingUrls[0] = tempPixels.trackingUrls[0].replace("__ANSWER_DATA__",JSON.stringify(answer_data))
+    tempPixel = tempPixel.replace("__SURVEY_ID__",adParameters.surveyid),
+    tempPixel = tempPixel.replace("__DEVICE_ID__",adParameters.identifer),
+    tempPixel = tempPixel.replace("__PLATFORM__",adParameters.platform),
+    tempPixel = tempPixel.replace("__VID__",adParameters.vid),
+    tempPixel = tempPixel.replace("__VPOS__",adParameters.vpos),
+    tempPixel = tempPixel.replace("__EVENT__",event),
+    tempPixel = tempPixel.replace("__DEVICE__",deviceType),
+    tempPixel = tempPixel.replace("__ANSWER_DATA__",JSON.stringify(answer_data))
   )
-  .done(function(data_a, data_b) {
-    // 送信
-    console.log(tempPixels);
-    simidController.post(tempPixels);
+  .done(function() {
+    // pixels配列に追加
+    pixels.trackingUrls.push(tempPixel);
+    console.log("pushed:"+ tempPixel);
+    if(event != "1"){
+      console.log("trackingReport");
+      console.log(pixels);
+      post(pixels);
+    }
   })
 }
 
