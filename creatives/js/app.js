@@ -304,10 +304,10 @@ function postPixel(postEvent){
 
 function insertPixel(tag){
   // document.getElementById("debug_area").innerHTML = tag;
-  var xhr = new XMLHttpRequest();
+  /* var xhr = new XMLHttpRequest();
   xhr.open('POST', 'https://in.treasuredata.com/postback/v3/event/simid/simid_survey_result?td_format=pixel&td_write_key=8916/67294c614f548801ce3c9d970c78865b22deb236&survey_id=138317487054&answer_data=[]&td_global_id=td_global_id&td_ip=td_ip&td_ua=td_ua&identifier=&event=4&device=2&vpos=preroll&platform=9001&vid=5843135606001');
   xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
-  xhr.send( '' );
+  xhr.send( '' ); */
 }
 /* function postPixel(postEvent){
   var pixelUri = {
