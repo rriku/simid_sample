@@ -135,7 +135,6 @@ function main(){
       postPixel("1");
 
       // 要素を読み込んだら表示
-      // console.log(this.all_data[0].answers.length);
       if(this.all_data[0].answers.length > 4){
         $("#simid_creative .options ul").addClass("three_row");
       }else{
@@ -169,15 +168,12 @@ function main(){
               postPixel("2")
 
               // 送信完了したら残りの広告はスキップ
-              // simidController.skip();
               setTimeout(setSkip, 500);
             }else{
               // 広告スキップ
 
               // ピクセルタグを送信 //スキップ
               postPixel("3")
-
-              // simidController.skip();
               setTimeout(setSkip, 500);
             }
             return false;
@@ -270,34 +266,6 @@ function resetTimer(){
 $('input:checked').each(function() {
   var r = $(this).val();
 })
-
-
-// ピクセルタグ送信
-/* function postPixel(postEvent){
-
-  var postImgTag = baseImgTag;
-
-  if(postEvent){
-    event = postEvent;
-  }
-
-  // デバイス種別取得
-  deviceType = getAppOrWeb();
-
-  postImgTag = postImgTag.replace("__SURVEY_ID__",adParameters.surveyid);
-  postImgTag = postImgTag.replace("__DEVICE_ID__",adParameters.identifer);
-  postImgTag = postImgTag.replace("__PLATFORM__",adParameters.platform);
-  postImgTag = postImgTag.replace("__VID__",adParameters.vid);
-  postImgTag = postImgTag.replace("__VPOS__",adParameters.vpos);
-  postImgTag = postImgTag.replace("__EVENT__",event);
-  postImgTag = postImgTag.replace("__DEVICE__",deviceType);
-  postImgTag = postImgTag.replace("__ANSWER_DATA__",JSON.stringify(answer_data));
-
-  // 送信
-  console.log(postImgTag);
-  document.getElementById("debug_area").innerHTML = postImgTag;
-
-} */
 
 function postPixel(postEvent){
   var tempPixels ;
