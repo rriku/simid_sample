@@ -139,7 +139,7 @@ class BaseSimidCreative {
   }
 
   onVideoEnded() {
-    // this.videoState.ended = true;
+    this.videoState.ended = true;
     console.log("timeout");
     postPixel("4");
   }
