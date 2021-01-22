@@ -69,7 +69,7 @@ class SimidController extends BaseSimidCreative {
     this.simidProtocol.sendMessage(CreativeMessage.REQUEST_TRACKING, uri );
   } */
   post(){
-    console.log("report:"+ pixels.uri);
+    console.log("report:"+ pixels.trackingUrls);
     this.simidProtocol.sendMessage(CreativeMessage.REQUEST_TRACKING, pixels );
   }
 
