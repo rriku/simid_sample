@@ -157,13 +157,13 @@ function main(){
               postPixel("2")
 
               // 送信完了したら残りの広告はスキップ
-              setTimeout(setSkip, 500);
+              setTimeout(setSkip, 1000);
             }else{
               // 広告スキップ
 
               // ピクセルタグを送信 //スキップ
               postPixel("3")
-              setTimeout(setSkip, 500);
+              setTimeout(setSkip, 1000);
             }
             return false;
         });
